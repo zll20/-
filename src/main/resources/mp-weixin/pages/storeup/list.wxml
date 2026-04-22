@@ -1,0 +1,31 @@
+<wxs src="../../utils/format.wxs" module="format" />
+<view>
+	<view class="content">
+		<view class="list-box">
+			<view class="cu-bar bg-white list-search-box">
+			</view>
+			<view class="list-box1">
+				<view class="list1" wx:if="{{type!=81}}">
+					<view bindtap="onDetailTap" data-item="{{item}}" class="list-item" wx:for="{{list}}" wx:key="index">
+						<view class="list-item-title">{{item.name}}</view>
+						<image mode="aspectFill" class="list-item-image" wx:if="{{format.preChapter(item.tablename)}}" src="/static/chapter.jpg"></image>
+						<image mode="aspectFill" class="list-item-image" wx:elif="{{format.preHttp(item.picture)}}" src="{{item.picture}}"></image>
+						<image mode="aspectFill" class="list-item-image" wx:else src="{{baseurl+item.picture}}"></image>
+						<view class="operate-box">
+							<view class="del-box" catchtap="onDeleteTap" data-item="{{item}}">
+								<text class="cuIcon-delete"></text>
+								<text class="text">删除</text>
+							</view>
+						</view>
+					</view>
+				</view>
+				<w-table wx:else column-names="{{column}}" table-data="{{list}}" bind:celltap="onUpdateOrDel" stripe="{{stripe}}" borderline="{{borderline}}" header-background="{{headerbg}}" header-color="{{headerColor}}" no-data-msg="" />
+		
+			</view>
+			<button wx:if="{{format.authChange(isAuth,'新增')}}" class="add-btn" bindtap="onAddTap">新增</button>
+		</view>
+	</view>
+	<view class="scrollTop" wx:if="{{scrollTop>200}}" bindtap="scrollTopClick">
+		<span class="icon iconfont icon-jiantou07"></span>
+	</view>
+</view>

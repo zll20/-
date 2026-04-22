@@ -1,0 +1,169 @@
+.content{ 
+	min-height: 100vh;
+	box-sizing: border-box;
+}
+.register-box{
+	padding: 20rpx;
+	background: url(http://codegen.caihongy.cn/20250814/4a8e27888ea14787868acb75a407c14b.jpg) no-repeat top center / cover;
+	display: flex;
+	width: 100%;
+	min-height: 100%;
+	align-items: center;
+	height: auto;
+	.register-form {
+		padding: 0 60rpx;
+		display: block;
+		width: 100%;
+		position: relative;
+		height: auto;
+		.register-img {
+			border-radius: 8rpx;
+			margin: 0 auto 20rpx auto;
+			display: block;
+			width: 160rpx;
+			height: 160rpx;
+		}
+		.register-item {
+			padding: 20rpx 0;
+			margin: 0;
+			background: #a2a2a280;
+			display: flex;
+			width: 100%;
+			border-color: #ffffff;
+			border-width: 0 0 2rpx 0;
+			border-style: solid;
+			height: auto;
+			.label {
+				border-radius: 0;
+				padding: 0 20rpx 0 20rpx;
+				color: #000;
+				width: auto;
+				font-size: 26rpx;
+				border-color: #ffffff;
+				border-width: 0 0px 0 0;
+				line-height: 60rpx;
+				border-style: solid;
+			}
+			.picker-box {
+				padding: 0 20rpx;
+				margin: 0;
+				flex: 1;
+				display: flex;
+				width: 100%;
+				height: auto;
+				.picker-input {
+					color: #000;
+					flex: 1;
+					font-size: 28rpx;
+					line-height: 60rpx;
+				}
+			}
+			.input {
+				border: 0px solid rgb(255, 170, 51);
+				border-radius: 8rpx;
+				padding: 0px 24rpx;
+				margin: 0px;
+				color: rgb(0, 0, 0);
+				flex: 1;
+				background: none;
+				font-size: 28rpx;
+				height: 60rpx;
+			}
+			.avator {
+				border-radius: 16rpx;
+				margin: 0 0 0 20rpx;
+				display: block;
+				width: 100rpx;
+				height: 100rpx;
+			}
+			.avator-placeholder {
+				border-radius: 16rpx;
+				margin: 0 0 0 20rpx;
+				background: #ffffff40;
+				border: 2rpx dashed #ffffff;
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				width: 100rpx;
+				height: 100rpx;
+				font-size: 20rpx;
+				color: #ffffff;
+				text-align: center;
+				line-height: 1.2;
+			}
+			.textarea {
+			}
+			.editor {
+				border: 0;
+				border-radius: 8rpx;
+				padding: 0;
+				width: 100%;
+				min-height: 300rpx;
+				height: auto;
+			}
+		}
+		.register-code-item {
+			padding: 20rpx 10rpx 20rpx 0;
+			margin: 0;
+			background: #a2a2a280;
+			display: flex;
+			width: 100%;
+			border-color: #ffffff;
+			border-width: 0 0 2rpx 0;
+			border-style: solid;
+			height: auto;
+			.input {
+				border: 0;
+				padding: 0 24rpx 0 24rpx;
+				margin: 0;
+				color: #333;
+				flex: 1;
+				background: none;
+				width: 100%;
+				font-size: 28rpx;
+				height: 60rpx;
+			}
+			.code-btn {
+				border: 0;
+				padding: 0 12rpx;
+				margin: 0;
+				color: #333;
+				background: #FFD128;
+				width: auto;
+				font-size: 28rpx;
+				line-height: 60rpx;
+				height: 60rpx;
+			}
+		}
+		.btn-submit {
+			border: 0;
+			border-radius: 0px;
+			padding: 0px;
+			margin: 20rpx 0;
+			color: #000;
+			background: #fff;
+			width: 100%;
+			font-size: 32rpx;
+			line-height: 88rpx;
+			height: 88rpx;
+		}
+		.idea1 {
+			background: red;
+			display: none;
+			width: 100%;
+			height: 80rpx;
+		}
+		.idea2 {
+			background: red;
+			display: none;
+			width: 100%;
+			height: 80rpx;
+		}
+		.idea3 {
+			background: red;
+			display: none;
+			width: 100%;
+			height: 80rpx;
+		}
+	}
+}

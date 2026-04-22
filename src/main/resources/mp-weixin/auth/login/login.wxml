@@ -1,0 +1,56 @@
+<view class="content">
+	<view class="login-box" style="backgroundImage: {{indexBgUrl}}">
+		<view class="login-form">
+			<image class="login-img" src="{{indexLogoUrl}}" mode="aspectFill"></image>
+			<view wx:if="{{loginType==1}}" class="login-form-item">
+				<view class="login-form-label">手机号：</view>
+				<input value="{{username}}" type="text" class="login-form-inp" data-name="username" bindinput="bindKeyInput" placeholder="请输入手机号" />
+			</view>
+			<view wx:if="{{loginType==1}}" class="login-form-item">
+				<view class="login-form-label">密码：</view>
+				<input value="{{password}}" password class="login-form-inp" data-name="password" bindinput="bindKeyInput" placeholder="请输入密码" />
+			</view>
+			<view wx:if="{{loginType==4}}" class="login-form-item">
+				<view class="login-form-label">手机号：</view>
+				<input value="{{phone}}" type="text" class="login-form-inp" data-name="phone" bindinput="bindKeyInput" placeholder="请输入手机号" />
+			</view>
+			<view wx:if="{{loginType==4}}" class="login-form-code">
+				<view class="login-form-label">验证码：</view>
+				<input class="login-form-inp" type="text" value="{{phonecode}}" data-name="phonecode" bindinput="bindKeyInput" placeholder="请输入验证码" />
+				<view wx:if="{{isEndFlag}}" class="getCodeBt" bindtap="phoneClick">
+					发送验证码
+				</view>
+				<view wx:if="{{!isEndFlag}}" class="getCodeBt">
+					{{emailText}}
+				</view>
+			</view>
+			<view class="login-form-picker" wx:if="{{phoneroles.length>2&&loginType==4}}">
+				<view class="login-form-label">用户类型：</view>
+				<picker class="picker-box" bindchange="phonerolesChange" value="{{phonerolesIndex}}" range="{{phoneroles}}" range-key="roleName">
+					<view>{{phoneroles[phonerolesIndex].roleName}}</view>
+				</picker>
+			</view>
+			<view class="login-form-picker" wx:if="{{roleNum>1&&loginType<=2}}">
+				<view class="login-form-label">用户类型：</view>
+				<picker class="picker-box" bindchange="optionsChange" value="{{index}}" range="{{options}}">
+					<view>{{options[index]}}</view>
+				</picker>
+			</view>
+			
+
+			
+			<button wx:if="{{loginType==1||loginType==3||loginType==4}}" class="login-btn-submit" bindtap="onLoginTap" type="primary">登录</button>
+			<button wx:if="{{loginType==2}}" class="login-btn-submit" bindtap="onFaceLoginTap" type="primary">人脸识别登录</button>
+			<view class="register-box">
+				<view class="register-btn" bindtap="onRegisterTap" data-role="xuesheng">注册学生</view>
+				<view class="forget-btn" bindtap="onForgetTap">忘记密码？</view>
+				<view class="forget-btn" wx:if="{{loginType==2||loginType==3||loginType==4}}" bindtap="changeLogin" data-type="1">用户密码登录</view>
+				<view class="forget-btn" wx:if="{{loginType==1}}" bindtap="changeLogin" data-type="4">手机号登录</view>
+			</view>
+			
+			<view class="idea1">idea1</view>
+			<view class="idea2">idea2</view>
+			<view class="idea3">idea3</view>
+		</view>
+	</view>
+</view>

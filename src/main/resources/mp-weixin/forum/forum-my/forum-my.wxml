@@ -1,0 +1,37 @@
+<wxs src="../../utils/format.wxs" module="format" />
+<view class="forum-list">
+	<view class="forum-list-item" wx:for="{{list}}" wx:key="index">
+		<view class="istop" wx:if="{{item.istop}}">
+			<span class="icon iconfont icon-jiantou24"></span>
+		</view>
+		<image wx:if="{{item.cover}}" src="{{baseurl + item.cover}}" mode="widthFix"></image>
+		<view class="info-box">
+			<view class="title">{{item.title}}</view>
+			<view class="center-box">
+				<view class="btn1" wx:if="{{item.isdone=='开放'}}">公开</view>
+				<view class="btn2" wx:if="{{item.isdone=='关闭'}}">私人</view>
+			</view>
+			<view class="center-box delflag" wx:if="{{item.delflag==1}}">
+				违规删除
+			</view>
+			<view class="center-box delflag" wx:if="{{item.sfsh=='否'}}">
+				审核不通过，原因：{{item.shhf}}
+			</view>
+			<view class="center-box shflag" wx:if="{{item.sfsh=='待审核'}}">
+				审核中
+			</view>
+			<view class="time">
+				发布时间：{{item.addtime}}			</view>
+			<view class="bottom-box">
+				<view class="view-btn" bindtap="onDetailTap" data-id="{{item.id}}">查看</view>
+				<view class="edit-btn" bindtap="onUpdateTap" data-id="{{item.id}}">修改</view>
+				<view class="del-btn" bindtap="onDeleteTap" data-id="{{item.id}}">删除</view>
+			</view>
+		</view>
+	</view>
+</view>
+<!--list end-->
+<button class="add-btn" bindtap="onUpdateTap">新</button>
+<view class="scrollTop" wx:if="{{scrollTop>200}}" bindtap="scrollTopClick">
+	<span class="icon iconfont icon-jiantou07"></span>
+</view>

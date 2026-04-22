@@ -1,0 +1,8 @@
+{
+	"navigationBarTitleText": "短信验证码",
+	"navigationBarBackgroundColor": "#FFFFFF",
+	"navigationBarTextStyle": "black",
+	"usingComponents": {
+		"w-popup": "/components/wx-popup/wx-popup"
+	}
+}

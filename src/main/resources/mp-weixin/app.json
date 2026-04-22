@@ -1,0 +1,114 @@
+{
+	"pages": [
+		"pages/home/home",
+		"pages/exampaperlist/list",
+		"pages/xuesheng/list",
+		"pages/xuesheng/detail",
+		"pages/xuesheng/add-or-update",
+		"pages/dancifenlei/list",
+		"pages/dancifenlei/detail",
+		"pages/dancifenlei/add-or-update",
+		"pages/danciku/list",
+		"pages/danciku/detail",
+		"pages/danciku/add-or-update",
+		"pages/dancixuexi/list",
+		"pages/dancixuexi/detail",
+		"pages/dancixuexi/add-or-update",
+		"pages/xuexijihua/list",
+		"pages/xuexijihua/detail",
+		"pages/xuexijihua/add-or-update",
+		"pages/forum-index/forum-index",
+		"pages/popupremind/list",
+		"pages/popupremind/detail",
+		"pages/popupremind/add-or-update",
+		"pages/storeup/list",
+		"pages/storeup/detail",
+		"pages/storeup/add-or-update",
+		"pages/smsregistercode/list",
+		"pages/smsregistercode/detail",
+		"pages/smsregistercode/add-or-update",
+		"pages/users/list",
+		"pages/users/detail",
+		"pages/users/add-or-update",
+		"pages/discussdanciku/list",
+		"pages/discussdanciku/detail",
+		"pages/discussdanciku/add-or-update",
+		"pages/tingli/tingli-list",
+		"pages/tingli/audio-list",
+		"pages/tingli/tingli-play",
+		"pages/wenkan/wenkan-index",
+		"pages/wenkan/wenkan-list",
+		"pages/wenkan/wenkan-detail",
+		"pages/center/center"
+	],
+	"window": {
+		"navigationBarTextStyle": "black",
+		"navigationBarTitleText": "Weixin",
+		"navigationBarBackgroundColor": "#ffffff"
+	},
+	"style": "v2",
+	"componentFramework": "glass-easel",
+	"sitemapLocation": "sitemap.json",
+	"lazyCodeLoading": "requiredComponents",
+	"subPackages": [
+		{
+			"root": "auth",
+			"name": "auth",
+			"pages": [
+				"login/login",
+				"forget/forget",
+				"register/register",
+				"user-info/user-info",
+				"linkOthers/linkOthers"
+			]
+		}
+		, {
+			"root": "exam",
+			"name": "exam",
+			"pages": [
+				"exampaperlist/exam",
+				"examrecord/detail",
+				"examrecord/list",
+				"examfailrecord/list"
+			]
+		}
+		, {
+			"root": "forum",
+			"name": "forum",
+			"pages": [
+				"forum-add-or-update/forum-add-or-update",
+				"forum-detail/forum-detail",
+				"forum-my/forum-my",
+				"forum-reply/forum-reply"
+			]
+		}
+	],
+	"requiredPrivateInfos": [
+		"chooseLocation",
+		"getLocation"
+	],
+	"permission": {
+		"scope.userLocation": {
+			"desc": "你的位置信息将用于小程序位置接口的效果展示"
+		}
+	}, 
+	"tabBar": {
+		"custom": false,
+		"color": "#636363",
+		"selectedColor": "#FFD128",
+		"borderStyle": "white",
+		"backgroundColor": "#FFFFFF",
+		"list": [{
+			"pagePath": "pages/home/home",
+			"iconPath": "static/tabs/index.png",
+			"selectedIconPath": "static/tabs/index1.png",
+			"text": "首页"
+		}
+		,{
+			"pagePath": "pages/center/center",
+			"iconPath": "static/tabs/mine.png",
+			"selectedIconPath": "static/tabs/mine1.png",
+			"text": "我的"
+		}]
+	}
+}

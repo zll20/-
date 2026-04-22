@@ -1,0 +1,62 @@
+<wxs src="../../utils/format.wxs" module="format" />
+<view class="content">
+	<view class="container">
+		<!-- 搜索栏 -->
+		<view class="list-search-box">
+			<view class="search-form">
+				<text class="icon iconfont icon-fangdajing07"></text>
+				<input placeholder-style="color: #000" value="{{searchForm.danci}}" type="text" placeholder="搜索单词" bindinput="searchKeyInput" data-name="danci"></input>
+			</view>
+			<button bindtap="search" class="search-btn">搜索</button>
+		</view>
+
+		<!-- 切换单词库按钮 -->
+		<button class="switch-btn" bindtap="showLevelSelector">
+			<text class="icon iconfont icon-shaixuan"></text>
+			切换单词库
+		</button>
+
+		<!-- 级别选择弹窗背景 -->
+		<view wx:if="{{showLevelSelector}}" class="level-mask" bindtap="hideLevelSelector"></view>
+		<!-- 级别选择弹窗 -->
+		<view class="level-selector {{showLevelSelector?'level-selector-active':''}}">
+			<view class="level-title">选择单词库</view>
+			<view class="level-grid">
+				<view
+					wx:for="{{jibieOptions}}"
+					wx:key="index"
+					class="level-item"
+					bindtap="enterLevel"
+					data-jibie="{{item}}"
+				>
+					{{item}}
+				</view>
+			</view>
+		</view>
+
+		<!-- 搜索结果列表 -->
+		<view wx:if="{{searchResultList.length > 0}}" class="search-result-box">
+			<view class="result-tip">搜索结果：</view>
+			<view
+				wx:for="{{searchResultList}}"
+				wx:key="index"
+				class="result-item"
+				bindtap="onDetailTap"
+				data-item="{{item}}"
+			>
+				<view class="result-danci">{{item.danci}}</view>
+				<view class="result-shiyi">{{item.shiyi}}</view>
+			</view>
+		</view>
+
+		<!-- 提示信息 -->
+		<view wx:else class="empty-tip">
+			<view class="empty-icon">📚</view>
+			<view>点击上方"切换单词库"按钮</view>
+			<view>选择要学习的单词级别</view>
+		</view>
+	</view>
+</view>
+<view class="scrollTop" wx:if="{{scrollTop>200}}" bindtap="scrollTopClick">
+	<span class="icon iconfont icon-jiantou07"></span>
+</view>

@@ -1,0 +1,54 @@
+.wenkan-container {
+  min-height: 100vh;
+  background: #f5f5f5;
+  padding-bottom: 40rpx;
+}
+.page-header {
+  background: #fff;
+  padding: 40rpx 30rpx;
+  text-align: center;
+  border-bottom: 1rpx solid #eee;
+}
+.page-title {
+  font-size: 36rpx;
+  font-weight: bold;
+  color: #333;
+}
+.level-switch {
+  background: #fff;
+  margin: 30rpx;
+  border-radius: 20rpx;
+  padding: 40rpx 30rpx;
+}
+.level-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 30rpx;
+}
+.level-item {
+  background: #f8f9fa;
+  border-radius: 16rpx;
+  padding: 40rpx 20rpx;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border: 2rpx solid transparent;
+}
+.level-item.active {
+  background: #e6f7ff;
+  border-color: #1890ff;
+}
+.level-icon {
+  font-size: 60rpx;
+  color: #666;
+  margin-bottom: 20rpx;
+}
+.level-item.active .level-icon {
+  color: #1890ff;
+}
+.level-text {
+  font-size: 28rpx;
+  color: #333;
+  font-weight: 500;
+}

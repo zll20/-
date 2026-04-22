@@ -1,0 +1,103 @@
+.header-container {
+	display: flex;
+	align-items: center;
+	background: #FFFFFF;
+	border-bottom: 1rpx solid #EEEEEE;
+	border-top: 1rpx solid #EEEEEE;
+	padding: 10rpx;
+
+	.left-container {
+		display: flex;
+		align-items: center;
+		margin: 10rpx;
+
+		.icon {
+			margin-right: 10rpx;
+			width: 40rpx;
+			height: 40rpx;
+		}
+	}
+
+	.center-container {
+		flex: 1;
+		text-align: center;
+	}
+
+	.right-container {
+		margin: 10rpx;
+	}
+}
+
+.exam-container {
+	background: #FFFFFF;
+	margin: 30rpx;
+	border-radius: 20rpx;
+	padding: 20rpx;
+
+	.title-container {
+		padding: 20rpx;
+
+		.type {
+			background: #EEEEEE;
+			padding: 10rpx;
+			border-radius: 10rpx;
+			font-size: 13px;
+		}
+
+		.title {
+			margin-left: 20rpx;
+		}
+	}
+
+	.answer-item {
+		margin: 20rpx;
+
+		.text {
+			margin-left: 20rpx;
+		}
+	}
+
+	.tiankong-container {
+		display: flex;
+		align-items: center;
+		margin: 20rpx;
+		.label {
+			font-size: 13px;
+			width: 70px;
+		}
+		textarea {
+			width: calc(100% - 70px);
+		}
+		.answer {
+			border: 1rpx solid #EEEEEE;
+			height: 60rpx;
+			margin: 0 20rpx;
+		}
+	}
+
+	.btn-submit {
+		height: 60rpx;
+		font-size: 30rpx;
+		line-height: 60rpx;
+		margin: 60rpx 0;
+		border-radius: 50rpx;
+	}
+
+	.btn-next {
+		height: 60rpx;
+		font-size: 30rpx;
+		line-height: 60rpx;
+		margin-top: 60rpx;
+		border-radius: 50rpx;
+	}
+}
+
+.tip-container {
+	margin-top: 50rpx;
+	border-top: 1rpx solid #EEEEEE;
+	padding: 20rpx;
+
+	.par {
+		margin-bottom: 20rpx;
+	}
+}

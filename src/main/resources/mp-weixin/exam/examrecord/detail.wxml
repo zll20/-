@@ -1,0 +1,36 @@
+<view class="list-search-box">
+	<view class="search-form">
+		<text class="icon iconfont icon-fangdajing07"></text>
+		<input placeholder-style="color: #333" value="{{searchForm.questionname}}" type="text" placeholder="试题" bindinput="searchKeyInput"></input>
+	</view>
+	<button bindtap="search" class="search-btn">搜索</button>
+</view>
+<view class="list-item" wx:for="{{list}}" wx:key="index" bindtap="showClick" data-index="{{index}}">
+	<view class="list-item1">
+		<view class="list-item-left">
+			<view class="title">试卷：{{item.papername}}</view>
+			<view class="text">
+				试题：<rich-text nodes="{{item.questionname}}"></rich-text>
+			</view>
+			<view class="text">
+				题型：{{item.type==0?'单选':item.type==1?'多选':item.type==2?'判断':item.type==3?'填空':'主观'}}题
+			</view>
+		</view>
+		<view class="list-item-right">
+			<view class="score">分数：{{item.score}}</view>
+			<view wx:if="{{item.myscore==0}}" class="error-tag">得分{{item.myscore}}</view>
+			<view wx:if="{{item.myscore>0}}" class="success-tag">得分{{item.myscore}}</view>
+		</view>
+	</view>
+	<view class="show-box {{showIndex==index?'show-active':''}}">
+		<view class="text">
+			正确答案：{{item.right}}
+		</view>
+		<view class="text">
+			我的答案：{{item.myanswer}}
+		</view>
+	</view>
+</view>
+<view class="scrollTop" wx:if="{{scrollTop>200}}" bindtap="scrollTopClick">
+	<span class="icon iconfont icon-jiantou07"></span>
+</view>

@@ -1,0 +1,55 @@
+<view class="content">
+	<view class="register-box" style="backgroundImage: {{indexBgUrl}}">
+		<view class="register-form">
+			<image class="register-img" src="{{indexLogoUrl}}" mode="aspectFill"></image>
+			<view wx:if="{{tableName=='xuesheng'}}" class="register-item">
+				<view class="label">昵称：</view>
+				<input data-name="nicheng" bindinput="bindKeyInput" class="input" value="{{ruleForm.nicheng}}"  type="text"  placeholder="昵称" />
+			</view>
+			<view wx:if="{{tableName=='xuesheng'}}" class="register-item">
+				<view class="label">姓名：</view>
+				<input data-name="xingming" bindinput="bindKeyInput" class="input" disabled="{{ro.xingming}}" value="{{ruleForm.xingming}}"  type="text"  placeholder="姓名" />
+			</view>
+			<view wx:if="{{tableName=='xuesheng'}}" class="register-item">
+				<view class="label">性别：</view>
+				<picker class="picker-box" disabled="{{ro.xingbie}}" bindchange="selChange" data-tablename="xuesheng" data-columnname="xingbie" value="{{xueshengxingbieIndex}}" range="{{xueshengxingbieOptions}}">
+					<view>
+						<view class="picker-input">{{ruleForm.xingbie?ruleForm.xingbie:"请选择性别"}}</view>
+					</view>
+				</picker>
+			</view>
+			<view wx:if="{{tableName=='xuesheng'}}"
+				bindtap="uploadTap"
+				data-mediatype="image"
+				class="register-item" data-tablename="xuesheng" data-columnname="touxiang">
+				<view class="label">头像：</view>
+				<image wx:if="{{ruleForm.touxiang}}" class="avator" src="{{baseurl+ruleForm.touxiang}}" mode=""></image>
+				<view wx:else class="avator-placeholder">点击上传头像</view>
+			</view>
+			<view wx:if="{{tableName=='xuesheng'}}" class="register-item">
+				<view class="label">密码：</view>
+				<input data-name="mima" bindinput="bindKeyInput" class="input" password  placeholder="密码" />
+			</view>
+			<view wx:if="{{tableName=='xuesheng'}}" class="register-item">
+				<view class="label">确认密码：</view>
+				<input data-name="mima2" bindinput="bindKeyInput" class="input" password placeholder="确认密码" />
+			</view>
+			<view wx:if="{{tableName=='xuesheng'}}" class="register-item">
+				<view class="label">手机：</view>
+				<input class="input" value="{{ruleForm.mobile}}" data-name="mobile" bindinput="bindKeyInput" type="text" placeholder="手机号码" />
+			</view>
+			<view wx:if="{{tableName=='xuesheng'}}" class="register-code-item">
+				<view class="label">验证码：</view>
+				<input value="{{smscode}}" type="text" class="code-input" data-name="smscode" bindinput="bindKeyInput2" placeholder="请输入短信验证码" />
+				<button type="primary" wx:if="{{isEndFlag}}" bindtap="sendsmscode" class="code-btn">发送验证码</button>
+				<button type="primary" wx:if="{{!isEndFlag}}" disabled class="code-btn">{{SecondToDate}}</button>
+			</view>
+			<button class="btn-submit" bindtap="register" type="primary">注册</button>
+			
+			<view class="idea1">idea1</view>
+			<view class="idea2">idea2</view>
+			<view class="idea3">idea3</view>
+			
+		</view>
+	</view>
+</view>

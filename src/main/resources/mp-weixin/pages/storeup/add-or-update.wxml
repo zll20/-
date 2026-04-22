@@ -1,0 +1,41 @@
+  
+
+<view class="content">
+	<view class="add-box" wx:if="{{showType==1}}">
+		<form class="add-form">
+			<view class="list-item">
+				<view class="label">表名</view>
+				<input class="inp" disabled="{{ro.tablename}}" value="{{ruleForm.tablename}}" placeholder="表名"  type="text" bindinput="bindKeyInput" data-name="tablename"></input>
+			</view>
+			<view class="list-item">
+				<view class="label">名称</view>
+				<input class="inp" disabled="{{ro.name}}" value="{{ruleForm.name}}" placeholder="名称"  type="text" bindinput="bindKeyInput" data-name="name"></input>
+			</view>
+			<view class="list-item"
+				bindtap="uploadTap" data-mediatype="image"
+				data-columnname="picture">
+				<view class="label">图片</view>
+				<image class="upload-img" wx:if="{{ruleForm.picture}}" src="{{baseurl+ruleForm.picture}}" mode="aspectFill"></image>
+				<image class="upload-img" wx:else src="../../static/upload.png" mode="aspectFill"></image>
+			</view>
+			<view class="list-item">
+				<view class="label">类型</view>
+				<input class="inp" disabled="{{ro.type}}" value="{{ruleForm.type}}" placeholder="类型"  type="text" bindinput="bindKeyInput" data-name="type"></input>
+			</view>
+			<view class="list-item">
+				<view class="label">推荐类型</view>
+				<input class="inp" disabled="{{ro.inteltype}}" value="{{ruleForm.inteltype}}" placeholder="推荐类型"  type="text" bindinput="bindKeyInput" data-name="inteltype"></input>
+			</view>
+			<view class="list-item">
+				<view class="label">备注</view>
+				<input class="inp" disabled="{{ro.remark}}" value="{{ruleForm.remark}}" placeholder="备注"  type="text" bindinput="bindKeyInput" data-name="remark"></input>
+			</view>
+        
+			
+			<view class="btn-box" >
+				<button  bindtap="beforeSubmit" class="btn-confirm">提交</button>
+			</view>
+		</form>
+
+	</view>
+</view>

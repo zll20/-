@@ -1,0 +1,18 @@
+  
+
+<view class="content">
+	<view class="add-box" wx:if="{{showType==1}}">
+		<form class="add-form">
+			<view class="list-item">
+				<view class="label">单词分类</view>
+				<input class="inp" disabled="{{ro.dancifenlei}}" value="{{ruleForm.dancifenlei}}" placeholder="单词分类"  type="text" bindinput="bindKeyInput" data-name="dancifenlei"></input>
+			</view>
+ 
+			
+			<view class="btn-box" >
+				<button  bindtap="beforeSubmit" class="btn-confirm">提交</button>
+			</view>
+		</form>
+
+	</view>
+</view>

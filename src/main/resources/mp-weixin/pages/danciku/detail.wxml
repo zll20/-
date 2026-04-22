@@ -1,0 +1,150 @@
+<wxs src="../../utils/format.wxs" module="format" />
+<view class="content">
+	<view class="detail-container">
+		<swiper class="detail-swiper-box" 
+			indicator-dots="{{true}}" autoplay="{{false}}" 
+			circular="{{true}}" 
+			indicator-active-color="#000000" 
+			indicator-color="rgba(0, 0, 0, .3)" duration="{{500}}" 
+			interval="{{5000}}" vertical="{{false}}">
+			<swiper-item class="swiper-item" wx:for="{{swiperList}}" wx:key="index" wx:for-item="swiper">
+				<image wx:if="{{format.preHttp(swiper)}}" src="{{swiper}}" bindtap="imgView" data-url="{{swiper}}"></image>
+				<image wx:else src="{{baseurl+swiper}}" bindtap="imgView" data-url="{{baseurl + swiper}}"></image>
+			</swiper-item>
+		</swiper>
+		<view class="detail-content">
+			<view class="list-item-price">
+				<view class="collect-active-box" wx:if="{{storeupFlag==1}}" bindtap="shoucang">
+					<text class="icon iconfont icon-shoucang11"></text>
+					<text class="text">已收藏</text>
+				</view>
+				<view class="collect-box" wx:if="{{storeupFlag==0}}" bindtap="shoucang">
+					<text class="icon iconfont icon-shoucang11"></text>
+					<text class="text">收藏</text>
+				</view>
+			</view>
+
+			<view class="detail-list-item">
+				<view class="label">单词：</view>
+				<view class="text">{{detail.danci}}</view>
+			</view>
+			<view class="detail-list-item">
+				<view class="label">级别：</view>
+				<view class="text">{{detail.jibie}}</view>
+			</view>
+			<view class="detail-list-item">
+				<view class="label">单词分类：</view>
+				<view class="text">{{detail.dancifenlei}}</view>
+			</view>
+			<view class="detail-list-item">
+				<view class="label">释义：</view>
+				<view class="text">{{detail.shiyi}}</view>
+			</view>
+			<view class="detail-list-item">
+				<view class="label">例句：</view>
+				<view class="text">{{detail.liju}}</view>
+			</view>
+			<view class="detail-list-item">
+				<view class="label">读音：</view>
+				<view class="text" style="display:flex;align-items:center;">
+					<image wx:if="{{detail.duyin}}"
+						src="/static/speaker.svg"
+						hover-class="audio-btn-hover"
+						bindtap="playAudio"
+						style="width:36rpx;height:36rpx;"
+					></image>
+					<view wx:else style="color:#999;font-size:24rpx;">暂无读音</view>
+				</view>
+			</view>
+			<view class="detail-list-item">
+				<view class="label">评论数：</view>
+				<view class="text">{{detail.discussnum}}</view>
+			</view>
+			<view class="detail-list-item">
+				<view class="label">收藏数：</view>
+				<view class="text">{{detail.storeupnum}}</view>
+			</view>
+
+			<view class="comment-box">
+				<view class="comment-header">
+					<view class="comment-header-title">评论</view>
+					<view bindtap="onCommentTap" class="comment-btn" style="display: flex;align-items: center;">
+						<view class="cuIcon-add"></view>
+						<view class="text">添加评论</view>
+					</view>
+				</view>
+			
+				<view wx:for="{{commentList}}" wx:key="index" class="cu-item comment-item">
+					<view class="istop" wx:if="{{item.istop}}">
+						<span class="icon iconfont icon-jiantou24"></span>
+					</view>
+					<view class="uinfo">
+						<image class="uinfo-img" wx:if="{{item.avatarurl}}" mode="aspectFill" src="{{baseurl+item.avatarurl}}"></image>
+						<view class="uinfo-name">{{item.nickname}}</view>
+					</view>
+					<view class="text-gray text-content text-df comment-content">
+						<rich-text nodes="{{item.content}}"></rich-text>
+					</view>
+					<view class="com-zanOrCai-box">
+						<view class="com-zan-box" wx:if="{{!item.comZanType&&!comCaiType}}" bindtap="comzanClick" data-item="{{item}}">
+							<span class="icon iconfont icon-zan07"></span>
+							<span class="label">赞</span>
+							<span class="num">({{item.thumbsupnum}})</span>
+						</view>
+						<view class="com-zan-active-box" wx:if="{{item.comZanType}}" bindtap="comzanClick" data-item="{{item}}">
+							<span class="icon iconfont icon-zan11"></span>
+							<span class="label">已赞</span>
+							<span class="num">({{item.thumbsupnum}})</span>
+						</view>
+						<view class="com-cai-box" wx:if="{{!item.comZanType&&!comCaiType}}" bindtap="comcaiClick" data-item="{{item}}">
+							<span class="icon iconfont icon-cai01"></span>
+							<span class="label">踩</span>
+							<span class="num">({{item.crazilynum}})</span>
+						</view>
+						<view class="com-cai-active-box" wx:if="{{comCaiType}}" bindtap="comcaiClick" data-item="{{item}}">
+							<span class="icon iconfont icon-cai16"></span>
+							<span class="label">已踩</span>
+							<span class="num">({{item.crazilynum}})</span>
+						</view>
+					</view>
+					<view class="margin-top-sm text-gray text-df com-time">{{item.addtime}}</view>
+					<view wx:if="{{item.reply}}" class="text-gray text-content text-df comment-content">
+						回复:<rich-text nodes="{{item.reply}}"></rich-text>
+					</view>
+					<view class="com-btn-box" wx:if="{{user&&user.id==item.userid}}">
+						<view class="com-del" bindtap="delClick" data-id="{{item.id}}">删除</view>
+					</view>
+				</view>
+			</view>
+
+			<view class="bottom-content bg-white button-box"></view>
+		</view>
+	</view>
+
+	<!-- 导航按钮 - 圆形固定定位在底部（评论下方） -->
+	<view wx:if="{{showNavigation}}" class="navigation-buttons">
+		<!-- 上一个按钮 -->
+		<button wx:if="{{hasPrev}}" hover-class="nav-btn-hover" class="nav-btn nav-prev" bindtap="prevWord">
+			<text class="icon iconfont icon-zuo"></text>
+			<text>上一个</text>
+		</button>
+		<view wx:else class="nav-btn nav-btn-disabled">
+			<text class="icon iconfont icon-zuo"></text>
+			<text>上一个</text>
+		</view>
+
+		<!-- 下一个按钮 -->
+		<button wx:if="{{hasNext}}" hover-class="nav-btn-hover" class="nav-btn nav-next" bindtap="nextWord">
+			<text class="icon iconfont icon-you"></text>
+			<text>下一个</text>
+		</button>
+		<view wx:else class="nav-btn nav-btn-disabled">
+			<text class="icon iconfont icon-you"></text>
+			<text>下一个</text>
+		</view>
+	</view>
+
+	<view class="scrollTop" wx:if="{{scrollTop>200}}" bindtap="scrollTopClick">
+		<span class="icon iconfont icon-jiantou07"></span>
+	</view>
+</view>

@@ -1,0 +1,90 @@
+/* components/wx-popup/wx-popup.wxss */
+.wx-popup {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 99;
+}
+
+.wx-popup__mask {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: rgba(0, 0, 0, 0.4);
+  opacity: 0;
+}
+
+.mask-ani {
+  transition-property: opacity;
+  transition-duration: 0.2s;
+}
+
+.wx-top-mask {
+  opacity: 1;
+}
+
+.wx-bottom-mask {
+  opacity: 1;
+}
+
+.wx-center-mask {
+  opacity: 1;
+}
+
+.wx-popup__wrapper {
+  display: block;
+  position: absolute;
+}
+
+.top {
+  top: 0;
+  left: 0;
+  right: 0;
+  transform: translateY(-500px);
+}
+
+.bottom {
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+.center {
+  display: flex;
+  flex-direction: column;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  top: 0;
+  justify-content: center;
+  align-items: center;
+  transform: scale(1.2);
+}
+
+.wx-popup__wrapper-box {
+  display: block;
+  position: relative;
+}
+
+.content-ani {
+  transition-property: transform, opacity;
+  transition-duration: 0.2s;
+}
+
+
+.wx-top-content {
+  transform: translateY(0);
+}
+
+.wx-bottom-content {
+  transform: translateY(0);
+}
+
+.wx-center-content {
+  transform: scale(1);
+  opacity: 1;
+}

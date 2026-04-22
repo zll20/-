@@ -1,0 +1,7 @@
+<!--components/wx-progress/wx-progress.wxml-->
+<view class="progress_box">
+		<canvas type="2d" class="progress_bg" id="cpbg"
+			style="width:250px;height:125px"></canvas>
+		<canvas type="2d" class="progress_bar" id="cpbar"
+		style="width:250px;height:125px"></canvas>
+	</view>

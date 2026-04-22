@@ -1,0 +1,29 @@
+<view class="content">
+	<view class="publish-box">
+		<form class="publish-form">
+			<view class="item-box">
+				<input class="inp" value="{{forum.title}}" placeholder="标题" bindinput="titleInput" data-name="title"></input>
+			</view>
+			<view class="item-box">
+				<picker class="picker-box" bindchange="pickerChange" value="{{isdoneIndex}}" range="{{options}}">
+					<view class="picker-view">{{options[isdoneIndex]}}</view>
+				</picker>
+			</view>
+			<view class="item-box">
+				<picker class="picker-box" bindchange="pickerChange2"  value="{{isanonIndex}}" range="{{options2}}">
+					<view class="picker-view">{{options2[isanonIndex]}}</view>
+				</picker>
+			</view>
+			<view class="img-box">
+				<image bindclick="imgView" data-item="{{item}}" data-index="{{index}}" wx:for="{{picList}}" wx:key="index" src="{{baseurl + item}}" mode="widthFix"></image>
+				<view class="img-text" bindtap="uploadImg">上传图片</view>
+			</view>
+			<view class="item-box">
+				<w-edt class="editor" ref="editor" value="{{ruleForm.content}}" placeholder="内容" bind:editorChange="contentChange"></w-edt>
+			</view>
+			<view class="btn-box">
+				<button bindtap="onSubmitTap" class="btn">确认提交</button>
+			</view>
+		</form>
+	</view>
+</view>

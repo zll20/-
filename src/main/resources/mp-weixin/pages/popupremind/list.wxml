@@ -1,0 +1,17 @@
+<wxs src="../../utils/format.wxs" module="format" />
+<view>
+	<view class="content">
+		<view class="list-box">
+			<view class="cu-bar bg-white list-search-box">
+			</view>
+			<view class="list-box1">
+				<w-table column-names="{{column}}" table-data="{{list}}" bind:celltap="onUpdateOrDel" stripe="{{stripe}}" borderline="{{borderline}}" header-background="{{headerbg}}" header-color="{{headerColor}}" no-data-msg="" />
+		
+			</view>
+			<button wx:if="{{format.authChange(isAuth,'新增')}}" class="add-btn" bindtap="onAddTap">新增</button>
+		</view>
+	</view>
+	<view class="scrollTop" wx:if="{{scrollTop>200}}" bindtap="scrollTopClick">
+		<span class="icon iconfont icon-jiantou07"></span>
+	</view>
+</view>

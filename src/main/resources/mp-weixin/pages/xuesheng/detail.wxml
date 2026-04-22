@@ -1,0 +1,48 @@
+<wxs src="../../utils/format.wxs" module="format" />
+<view class="content">
+	<view class="detail-container">
+		<swiper class="detail-swiper-box" 
+			indicator-dots="{{true}}" autoplay="{{false}}" 
+			circular="{{true}}" 
+			indicator-active-color="#000000" 
+			indicator-color="rgba(0, 0, 0, .3)" duration="{{500}}" 
+			interval="{{5000}}" vertical="{{false}}">
+			<swiper-item class="swiper-item" wx:for="{{swiperList}}" wx:key="index" wx:for-item="swiper">
+				<image wx:if="{{format.preHttp(swiper)}}" src="{{swiper}}" bindtap="imgView" data-url="{{swiper}}"></image>
+				<image wx:else src="{{baseurl+swiper}}" bindtap="imgView" data-url="{{baseurl + swiper}}"></image>
+			</swiper-item>
+		</swiper>
+		<view class="detail-content">
+
+			<view class="detail-list-item">
+				<view class="label">姓名：</view>
+				<view class="text" >{{detail.xingming}}</view>
+			</view>
+			<view class="detail-list-item">
+				<view class="label">性别：</view>
+				<view class="text" >{{detail.xingbie}}</view>
+			</view>
+			<view class="detail-list-item">
+				<view class="label">邮箱：</view>
+				<view class="text" >{{detail.youxiang}}</view>
+			</view>
+			<view class="detail-list-item">
+				<view class="label">手机号：</view>
+				<view class="text" style="text-decoration: underline" binddtap="callClick" data-phone="{{detail.mobile}}" >{{detail.mobile}}</view>
+			</view>
+
+
+
+
+
+
+
+			<view class="bottom-content bg-white button-box">
+
+			</view>
+		</view>
+	</view>
+	<view class="scrollTop" wx:if="{{scrollTop>200}}" bindtap="scrollTopClick">
+		<span class="icon iconfont icon-jiantou07"></span>
+	</view>
+</view>

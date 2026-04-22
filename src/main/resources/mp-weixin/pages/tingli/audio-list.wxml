@@ -1,0 +1,31 @@
+<view class="tingli-audio-container">
+  <view class="page-header">
+    <text class="page-title">{{jibie}}听力材料</text>
+  </view>
+
+  <view class="content-area">
+    <view class="empty-tip" wx:if="{{tingliList.length === 0}}">
+      <text class="empty-text">暂无听力材料</text>
+    </view>
+    <view class="material-list" wx:else>
+      <view
+        wx:for="{{tingliList}}"
+        wx:key="id"
+        class="material-item"
+        bindtap="playTingli"
+        data-item="{{item}}"
+      >
+        <view class="material-left">
+          <view class="material-icon">🎵</view>
+          <view class="material-info">
+            <text class="material-name">{{item.mingcheng}}</text>
+            <text class="material-jibie">{{item.jibie}}</text>
+          </view>
+        </view>
+        <view class="material-right">
+          <view class="play-btn">▶</view>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>

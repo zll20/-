@@ -1,0 +1,73 @@
+<view>
+	<view class="header-container" style="padding-top: {{padTop}}px;">
+		<view bindtap="leaveTap" class="left-container">
+			<image class="icon" src="../../static/paper/l5.png" mode=""></image>
+			<text>退出</text>
+		</view>
+		<view class="center-container">
+			倒计时：{{SecondToDate}}
+		</view>
+		<view class="right-container">
+			题目： {{currentItem}}/{{list.length}}
+		</view>
+	</view>
+	<view class="exam-container">
+		<view class="title-container" style="display: flex;align-items: flex-start">
+			<view wx:if="{{item.type==0}}" class="type">
+				单选题
+			</view>
+			<view wx:if="{{item.type==1}}" class="type">
+				多选题
+			</view>
+			<view wx:if="{{item.type==2}}" class="type">
+				判断题
+			</view>
+			<view wx:if="{{item.type==3}}" class="type">
+				填空题
+			</view>
+			<view wx:if="{{item.type==4}}" class="type">
+				主观题
+			</view>
+			<span class="title" style="width: calc(100% - 70px)">
+				<rich-text nodes="{{item.questionname}}"></rich-text>
+			</span>
+		</view>
+		<view class="answer-container">
+			<view class="tiankong-container" wx:if="{{item.type==3}}">
+				<view class="label">填写答案：</view>
+				<input value="{{answer}}" bindinput="answerKeyInput" type="text" class="answer" />
+			</view>
+			<view wx:if="{{item.type==0 || item.type==2 }}" class="answer-item" wx:for="{{item.options}}" wx:for-item="option" wx:for-index="indexs" wx:key="indexs">
+				<checkbox bindtap="itemCheckTap" data-checked="{{option.checked}}" data-index="{{indexs}}" checked="{{option.checked}}" />
+				<text class="text">{{option.text}}</text>
+			</view>
+			<view wx:if="{{item.type==1}}" class="answer-item" wx:for="{{item.options}}" wx:for-item="option" wx:for-index="indexs" wx:key="indexs">
+				<checkbox bindtap="itemCheckTap" data-checked="{{option.checked}}" data-index="{{indexs}}" checked="{{option.checked}}" />
+				<text class="text">{{option.text}}</text>
+			</view>
+			<view class="tiankong-container" wx:if="{{item.type==4}}">
+				<view class="label">填写答案：</view>
+				<textarea value="{{answer}}" bindinput="answerKeyInput" type="text" class="answer" />
+			</view>
+			<button wx:if="{{!isSubmit}}" bindtap="submitTap" class="btn-submit" type="primary">提交答案</button>
+			<button wx:if="{{isSubmit&&currentItem<=list.length}}" bindtap="nextTap" type="warn" class="btn-next">下一题</button>
+		</view>
+		<view wx:if="{{isSubmit&&currentItem<=list.length}}" class="tip-container">
+			<view class="par" wx:if="{{item.type != 4}}">
+				答题结果：
+				<text wx:if="{{item.answer==answer}}" class="text-blue">正确</text>
+				<text wx:if="{{item.answer!=answer}}" class="text-red">错误</text>
+			</view>
+			<view class="par" wx:if="{{item.type != 4}}">
+				本题答案：{{item.answer}}
+			</view>
+			<view class="par">
+				您的答案是：{{answer}}
+			</view>
+			<view class="par">
+				题目分析：{{item.analysis}}
+			</view>
+		</view>
+		<!-- {{score}} -->
+	</view>
+</view>

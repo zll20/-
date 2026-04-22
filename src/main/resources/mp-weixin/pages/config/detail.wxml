@@ -1,0 +1,37 @@
+<wxs src="../../utils/format.wxs" module="format" />
+<view class="content">
+	<view class="detail-container">
+		<view class="detail-content">
+
+			<view class="detail-list-item">
+				<view class="label">名称：</view>
+				<view class="text" >{{detail.name}}</view>
+			</view>
+			<view class="detail-img-item">
+				<image wx:if="{{detail.value}}" src="{{baseurl+detail.value}}"></image>
+			</view>
+			<view class="detail-list-item">
+				<view class="label">类型：</view>
+				<view class="text" >{{detail.type}}</view>
+			</view>
+
+
+
+			<view class="detail-list-item">
+				<view class="label">url：</view>
+				<view class="text">{{detail.url}}</view>
+			</view>
+
+
+
+
+
+			<view class="bottom-content bg-white button-box">
+
+			</view>
+		</view>
+	</view>
+	<view class="scrollTop" wx:if="{{scrollTop>200}}" bindtap="scrollTopClick">
+		<span class="icon iconfont icon-jiantou07"></span>
+	</view>
+</view>

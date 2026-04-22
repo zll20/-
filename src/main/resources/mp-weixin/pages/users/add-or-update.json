@@ -1,0 +1,11 @@
+{
+	"navigationBarTitleText": "管理员",
+	"navigationBarBackgroundColor": "#FFFFFF",
+	"navigationBarTextStyle": "black",
+	"usingComponents": {
+		"w-edt": "/components/wx-editor/wx-editor",
+		"w-dpk": "/components/wx-datepicker/wx-datepicker",
+		"w-msel": "/components/wx-mulselect/wx-mulselect",
+		"w-popup": "/components/wx-popup/wx-popup"
+	}
+}

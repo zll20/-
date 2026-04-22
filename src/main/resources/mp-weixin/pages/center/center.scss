@@ -1,0 +1,396 @@
+.content {
+	min-height: 100vh;
+	box-sizing: border-box;
+	.center-box {
+		padding: 0;
+		background: #F6F7F9;
+		width: 100%;
+		min-height: 100%;
+		position: relative;
+		height: auto;
+		.center-header-box {
+			border-radius: 0 0 30rpx 30rpx;
+			padding: 20rpx;
+			margin: 0 0 20rpx 0;
+			background: #fff;
+			display: flex;
+			width: 100%;
+			min-height: 280rpx;
+			position: relative;
+			height: auto;
+			.center-userinfo {
+				display: flex;
+				align-items: center;
+				flex-wrap: wrap;
+				height: auto;
+				.avatar {
+					border-radius: 100%;
+					padding: 0;
+					margin: 0 20rpx 0 40rpx;
+					width: 132rpx;
+					height: 132rpx;
+				}
+				.info-box {
+					margin: 0px 0 0;
+					flex-direction: column;
+					display: flex;
+					width: auto;
+					justify-content: center;
+					align-items: center;
+					order: 2;
+					.info-name {
+						color: #666;
+						width: 100%;
+						font-size: 28rpx;
+						line-height: 1.5;
+						text-align: left;
+					}
+					.info-desc {
+						overflow: hidden;
+						color: #666;
+						white-space: nowrap;
+						width: 100%;
+						font-size: 28rpx;
+						line-height: 1.5;
+						text-overflow: ellipsis;
+						text-align: left;
+					}
+				}
+				.other-info-box {
+					border-radius: 20rpx;
+					padding: 20rpx 40rpx 20rpx 40rpx;
+					margin: 20rpx 5% 0 5%;
+					background: url(http://codegen.caihongy.cn/20250814/99c884f099b4425ba22dac8e1a2c6850.jpg) no-repeat center top /  100% auto;
+					display: flex;
+					width: 90%;
+					flex-wrap: wrap;
+					order: 3;
+					.iphone-box {
+						display: flex;
+						width: 100%;
+						font-size: 28rpx;
+						line-height: 48rpx;
+						align-items: center;
+						.label {
+							color: #333;
+							white-space: nowrap;
+						}
+						.text {
+							color: #333;
+							white-space: nowrap;
+						}
+					}
+					.balance-box {
+						display: flex;
+						width: 100%;
+						font-size: 28rpx;
+						line-height: 48rpx;
+						align-items: center;
+						.label {
+							color: #333;
+							white-space: nowrap;
+						}
+						.text {
+							color: #333;
+							white-space: nowrap;
+						}
+					}
+					.integral-box {
+						display: flex;
+						width: 100%;
+						font-size: 28rpx;
+						line-height: 48rpx;
+						align-items: center;
+						.label {
+							color: #333;
+							white-space: nowrap;
+						}
+						.text {
+							color: #333;
+							white-space: nowrap;
+						}
+					}
+				}
+				.operate-box {
+					margin: 30rpx 0 0;
+					display: flex;
+					width: 100%;
+					justify-content: center;
+					align-items: center;
+					order: 3;
+					.like-box {
+						border-radius: 60rpx;
+						padding: 0 20rpx 0 20rpx;
+						margin: 0 40rpx 0 40rpx;
+						background: #FFD12830;
+						display: flex;
+						.label {
+						}
+						.text {
+							color: #333;
+							font-size: 28rpx;
+							line-height: 60rpx;
+						}
+					}
+					.collect-box {
+						border-radius: 60rpx;
+						padding: 0 20rpx 0 20rpx;
+						margin: 0 40rpx 0 40rpx;
+						color: #fff;
+						background: #0036FF10;
+						display: flex;
+						.label {
+						}
+						.text {
+							color: #333;
+							font-size: 28rpx;
+							line-height: 60rpx;
+						}
+					}
+				}
+			}
+			.setting-box {
+				padding: 0;
+				flex-direction: column;
+				top: 20rpx;
+				display: flex;
+				width: auto;
+				justify-content: center;
+				align-items: center;
+				position: absolute;
+				right: 40rpx;
+				height: auto;
+				.iconfont {
+					border: 0;
+					border-radius: 0;
+					padding: 0;
+					color: #000;
+					width: auto;
+					font-size: 52rpx;
+					line-height: 1;
+				}
+				.text {
+					color: #333;
+					font-size: 32rpx;
+					line-height: 2;
+				}
+			}
+			.unLogin-text {
+				color: #666;
+				display: flex;
+				width: 100%;
+				font-size: 36rpx;
+				justify-content: center;
+				align-items: center;
+				height: 100%;
+			}
+		}
+		.center-list {
+			background: none;
+			width: 100%;
+			height: auto;
+			.center-menu-box {
+				border-radius: 30rpx;
+				margin: 0 0 40rpx;
+				overflow: hidden;
+				background: #fff;
+				width: 100%;
+				height: auto;
+				.menu-title {
+					padding: 0 20rpx 0 40rpx;
+					color: #fff;
+					background: url(http://codegen.caihongy.cn/20250214/607fdecc1a9b45e7a35d80592775c303.png) center center/100% 100%;
+					font-weight: bold;
+					display: flex;
+					width: 100%;
+					font-size: 32rpx;
+					line-height: 100rpx;
+					justify-content: space-between;
+					text-align: left;
+					.text {
+						color: #333;
+						font-weight: 500;
+						font-size: 32rpx;
+						line-height: 100rpx;
+					}
+				}
+				.me-menu-list {
+					padding: 0;
+					display: flex;
+					width: 100%;
+					flex-wrap: wrap;
+					height: auto;
+					.me-menu-item {
+						padding: 0 0 0 40rpx;
+						display: flex;
+						width: 50%;
+						border-color: #eeeeee;
+						border-width: 0 0 2rpx 0;
+						align-items: center;
+						border-style: solid;
+						height: auto;
+						.me-menu-icon {
+							color: #000;
+							font-size: 60rpx;
+							line-height: 1;
+						}
+						.text {
+							padding: 0 20rpx;
+							color: #000;
+							flex: 1;
+							width: 100%;
+							font-size: 28rpx;
+							line-height: 100rpx;
+						}
+						.icon {
+							color: #999;
+							display: none;
+							width: 28rpx;
+							font-size: 28rpx;
+							line-height: 28rpx;
+						}
+					}
+				}
+			}
+		}
+		.center-recommend-box {
+			border-radius: 20rpx;
+			overflow: hidden;
+			background: none;
+			width: 100%;
+			height: auto;
+			order: 5;
+			.recommend-title {
+				padding: 0 0 0 40rpx;
+				color: #333;
+				background: url(http://codegen.caihongy.cn/20250214/607fdecc1a9b45e7a35d80592775c303.png) center center/100% 100%;
+				font-weight: 500;
+				width: 100%;
+				font-size: 32rpx;
+				line-height: 100rpx;
+				text-align: left;
+			}
+			.center-recommend-list {
+				padding: 20rpx ;
+				background: #F6F7F9;
+				display: flex;
+				width: 100%;
+				justify-content: space-between;
+				flex-wrap: wrap;
+				height: auto;
+				.center-recommend-item {
+					border-radius: 20rpx;
+					padding:  20rpx 20rpx;
+					margin: 0 0 20rpx;
+					background: #fff;
+					display: flex;
+					width: 49%;
+					flex-wrap: wrap;
+					height: auto;
+					.list-item-image {
+						border-radius: 20rpx;
+						margin: 0 0 10rpx 0;
+						object-fit: cover;
+						display: block;
+						width: 100%;
+						height: 220rpx;
+					}
+					.list-item-title {
+						padding: 0 8rpx;
+						overflow: hidden;
+						color: #000;
+						white-space: nowrap;
+						font-weight: 500;
+						width: 100%;
+						font-size: 28rpx;
+						line-height: 1.5;
+						text-overflow: ellipsis;
+						text-align: center;
+					}
+					.list-item-time {
+						padding: 0 8rpx;
+						color: #959595;
+						width: 100%;
+						font-size: 24rpx;
+						line-height: 2;
+						text-align: center;
+					}
+				}
+			}
+		}
+		.kong {
+			width: 100%;
+			height: 80px
+		}
+	}
+	.passwordForm {
+		width: 100%;
+		padding: 10px 20px;
+		background: #fff;
+	
+		.passwordInput {
+			background: #eee;
+			margin: 0 0 10px;
+			padding: 0 10px;
+	
+			input {
+				height: 36px;
+				line-height: 36px;
+				font-size: 14px;
+			}
+		}
+	
+		.passwordBtnView {
+			width: 100%;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			padding: 10px 0;
+	
+			.passwordBtn {
+				padding: 0 20px;
+				width: auto;
+				height: 20px;
+				line-height: 20px;
+				font-size: 14px;
+				color: #fff;
+				background: #007aff;
+				border: none;
+				border-radius: 5px;
+	
+			}
+		}
+	}
+	.settingsPanel {
+		width: 100%;
+		padding: 10px 20px;
+		background: #fff;
+
+		.settingsBtnView {
+			width: 100%;
+			display: flex;
+			align-items: center;
+			justify-content: space-around;
+			padding: 10px 0;
+
+			.settingsBtn {
+				padding: 0 20px;
+				width: 45%;
+				height: 40px;
+				line-height: 40px;
+				font-size: 14px;
+				color: #fff;
+				border: none;
+				border-radius: 5px;
+
+				&.passwordBtn {
+					background: #007aff;
+				}
+
+				&.logoutBtn {
+					background: #ff3b30;
+				}
+			}
+		}
+	}
+}

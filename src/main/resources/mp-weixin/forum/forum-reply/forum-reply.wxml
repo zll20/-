@@ -1,0 +1,12 @@
+<view class="content">
+	<view class="publish-box">
+		<form class="publish-form">
+			<view class="item-box">
+				<w-edt class="editor" ref="editor" value="{{content}}" placeholder="内容" bind:editorChange="contentChange"></w-edt>
+			</view>
+			<view class="btn-box">
+				<button class="btn" bindtap="onReplyTap" class="bg-red margin-tb-sm">提交回复</button>
+			</view>
+		</form>
+	</view>
+</view>

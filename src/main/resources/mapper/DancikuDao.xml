@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.yb.dao.DancikuDao">
+
+	<!-- 可根据自己的需求，是否要使用 -->
+    <resultMap type="com.yb.entity.DancikuEntity" id="dancikuMap">
+        <result property="danci" column="danci"/>
+        <result property="jibie" column="jibie"/>
+        <result property="dancifenlei" column="dancifenlei"/>
+        <result property="shiyi" column="shiyi"/>
+        <result property="liju" column="liju"/>
+        <result property="fengmiantu" column="fengmiantu"/>
+        <result property="clicktime" column="clicktime"/>
+        <result property="discussnum" column="discussnum"/>
+        <result property="storeupnum" column="storeupnum"/>
+    </resultMap>
+
+	<select id="selectListVO"
+		resultType="com.yb.entity.vo.DancikuVO" >
+		SELECT * FROM danciku  danciku         
+        <where>${ew.sqlSegment}</where>
+	</select>
+	
+	<select id="selectVO"
+		resultType="com.yb.entity.vo.DancikuVO" >
+		SELECT  danciku.* FROM danciku  danciku 	
+ 		<where>${ew.sqlSegment}</where>
+	</select>
+
+    <select id="selectListView"
+		resultType="com.yb.entity.view.DancikuView" >
+
+		SELECT  danciku.* FROM danciku  danciku 	        
+        <where>${ew.sqlSegment}</where>
+	</select>
+	
+	<select id="selectView"
+		resultType="com.yb.entity.view.DancikuView" >
+		SELECT * FROM danciku  danciku <where>${ew.sqlSegment}</where>
+	</select>
+	
+
+
+</mapper>

@@ -1,0 +1,8 @@
+{
+	"navigationBarTitleText": "回复评论",
+	"navigationBarBackgroundColor": "#FFFFFF",
+	"navigationBarTextStyle": "black",
+	"usingComponents": {
+		"w-edt": "/components/wx-editor/wx-editor"
+	}
+}

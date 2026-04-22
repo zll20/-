@@ -1,0 +1,14 @@
+<wxs src="../../utils/format.wxs" module="format" />
+<view class="content-box">
+	<textarea value="{{fromtext}}" placeholder="翻译文本" bindinput="translateChange"></textarea>
+	<view class="opera-box">
+		<picker mode="selector" range="{{langList}}" range-key="name" bind:change="langChange1">
+			<view class="picker-text">{{format.translateName(from, langList)}}</view>
+		</picker>
+		→→
+		<picker mode="selector" range="{{langList}}" range-key="name" bind:change="langChange2">
+			<view class="picker-text">{{format.translateName(to, langList)}}</view>
+		</picker>
+	</view>
+	<textarea value="{{totext}}" disabled placeholder="输出文本"></textarea>
+</view>

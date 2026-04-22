@@ -1,0 +1,49 @@
+<view class="tingli-container">
+  <view class="page-header">
+    <text class="page-title">{{jibie ? jibie + '听力材料' : '听力材料'}}</text>
+  </view>
+
+  <!-- 级别选择 -->
+  <view class="level-switch">
+    <view class="level-title">选择级别</view>
+    <view class="level-grid">
+      <view
+        wx:for="{{levelList}}"
+        wx:key="index"
+        class="level-item {{currentLevel === item ? 'active' : ''}}"
+        bindtap="selectLevel"
+        data-level="{{item}}"
+      >
+        <text class="level-icon iconfont {{iconMap[item]}}"></text>
+        <text class="level-text">{{item}}</text>
+      </view>
+    </view>
+  </view>
+
+  <view class="content-area" wx:if="{{currentLevel}}">
+    <view class="content-title">当前级别：{{ currentLevel }}</view>
+    <view class="empty-tip" wx:if="{{tingliList.length === 0}}">
+      <text class="empty-text">暂无听力材料</text>
+    </view>
+    <view class="material-list" wx:else>
+      <view
+        wx:for="{{tingliList}}"
+        wx:key="id"
+        class="material-item"
+        bindtap="playTingli"
+        data-item="{{item}}"
+      >
+        <view class="material-left">
+          <view class="material-icon">🎵</view>
+          <view class="material-info">
+            <text class="material-name">{{item.mingcheng}}</text>
+            <text class="material-jibie">{{item.jibie}}</text>
+          </view>
+        </view>
+        <view class="material-right">
+          <view class="play-btn">▶</view>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>

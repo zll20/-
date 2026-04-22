@@ -1,0 +1,25 @@
+<view class="list-search-box">
+	<view class="search-form">
+		<text class="icon iconfont icon-fangdajing07"></text>
+		<input placeholder-style="color: #333" value="{{searchForm.papername}}" type="text" placeholder="试卷名称" bindinput="searchKeyInput"></input>
+	</view>
+	<button bindtap="search" class="search-btn">搜索</button>
+</view>
+<view bindtap="onDetailTap" data-item="{{item}}" class="list-item" wx:for="{{list}}" wx:key="index">
+	<view class="list-item-left">
+		<view class="title">试卷名称：{{item.papername}}<rich-text nodes="&nbsp;&nbsp;"/>({{item.username}})</view>
+	</view>
+	<view class="list-item-right" wx:if="{{item.ismark>0}}">
+		<view class="error-tag">分数：批阅中</view>
+		<view class="success-tag">准确率：/</view>
+		<view class="error-tag">错误率：/</view>
+	</view>
+	<view class="list-item-right" wx:else>
+		<view class="error-tag">分数：{{item.myscore}}分</view>
+		<view class="success-tag">准确率：{{item.rightAcc}}%</view>
+		<view class="error-tag">错误率：{{item.errorAcc}}%</view>
+	</view>
+</view>
+<view class="scrollTop" wx:if="{{scrollTop>200}}" bindtap="scrollTopClick">
+	<span class="icon iconfont icon-jiantou07"></span>
+</view>

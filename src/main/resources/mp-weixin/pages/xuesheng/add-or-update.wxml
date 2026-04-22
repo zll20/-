@@ -1,0 +1,47 @@
+  
+
+<view class="content">
+	<view class="add-box" wx:if="{{showType==1}}">
+		<form class="add-form">
+			<view class="list-item">
+				<view class="label">账号</view>
+				<input class="inp" disabled="{{ro.mima}}" value="{{ruleForm.mima}}" placeholder="账号"  type="text" bindinput="bindKeyInput" data-name="mima"></input>
+			</view>
+			<view class="list-item">
+				<view class="label">密码</view>
+				<input class="inp" disabled="{{ro.password}}" value="{{ruleForm.password}}" placeholder="密码"  password bindinput="bindKeyInput" data-name="password"></input>
+			</view>
+			<view class="list-item">
+				<view class="label">姓名</view>
+				<input class="inp" disabled="{{ro.xingming}}" value="{{ruleForm.xingming}}" placeholder="姓名"  type="text" bindinput="bindKeyInput" data-name="xingming"></input>
+			</view>
+			<view class="list-item">
+				<view class="label">性别</view>
+				<picker class="picker-box" disabled="{{ro.xingbie}}" bindchange="selChange" data-columnname="xingbie" value="{{xingbieIndex}}" range="{{xingbieOptions}}">
+					<view class="picker-text">{{ruleForm.xingbie?ruleForm.xingbie:"请选择性别"}}</view>
+				</picker>
+			</view>
+			<view class="list-item"
+				bindtap="uploadTap" data-mediatype="image"
+				data-columnname="touxiang">
+				<view class="label">头像</view>
+				<image class="upload-img" wx:if="{{ruleForm.touxiang}}" src="{{baseurl+ruleForm.touxiang}}" mode="aspectFill"></image>
+				<image class="upload-img" wx:else src="../../static/upload.png" mode="aspectFill"></image>
+			</view>
+			<view class="list-item">
+				<view class="label">邮箱</view>
+				<input class="inp" disabled="{{ro.youxiang}}" value="{{ruleForm.youxiang}}" placeholder="邮箱"  type="text" bindinput="bindKeyInput" data-name="youxiang"></input>
+			</view>
+			<view class="list-item">
+				<view class="label">手机号</view>
+				<input class="inp" disabled="{{ro.mobile}}" value="{{ruleForm.mobile}}" placeholder="手机号"  type="text" bindinput="bindKeyInput" data-name="mobile"></input>
+			</view>
+         
+			
+			<view class="btn-box" >
+				<button  bindtap="beforeSubmit" class="btn-confirm">提交</button>
+			</view>
+		</form>
+
+	</view>
+</view>

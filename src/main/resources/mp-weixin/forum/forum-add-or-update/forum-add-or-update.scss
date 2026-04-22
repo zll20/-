@@ -1,0 +1,100 @@
+.content {
+	min-height: calc(100vh - 44px);
+	box-sizing: border-box;
+	.publish-box {
+		padding: 0;
+		background: #F6F7F9;
+		width: 100%;
+		min-height: 100%;
+		position: relative;
+		height: auto;
+		.publish-form {
+			padding: 24rpx;
+			background: none;
+			display: block;
+			width: 100%;
+			height: auto;
+			.item-box {
+				padding: 12rpx 0 12rpx 0;
+				margin: 0 0 10rpx 0;
+				display: flex;
+				width: 100%;
+				border-color: #cccccc;
+				border-width: 0;
+				align-items: center;
+				border-style: solid;
+				height: auto;
+				.inp {
+					border: 2rpx solid #3D3D3D;
+					border-radius: 8rpx;
+					padding: 0 24rpx 0 24rpx;
+					margin: 0px;
+					color: #333;
+					flex: 1;
+					background: #F7F7F7;
+					font-size: 28rpx;
+					height: 80rpx;
+				}
+				.picker-box {
+					flex: 1;
+					width: 100%;
+					height: auto;
+					.picker-view {
+						border: 2rpx solid #3D3D3D;
+						border-radius: 8rpx;
+						padding: 0 20rpx;
+						color: #666;
+						width: 100%;
+						font-size: 28rpx;
+						line-height: 80rpx;
+					}
+				}
+				.editor {
+					border: 2rpx solid #3D3D3D;
+					border-radius: 8rpx;
+					padding: 20rpx;
+					margin: 0px;
+					flex: 1;
+					background: #F7F7F7;
+					min-height: 300rpx;
+					height: auto;
+				}
+			}
+			.img-box {
+				display: flex;
+				align-items: center;
+				padding: 10px 0;
+				image,video {
+					width: 50px;
+					margin: 0 5px 0 0;
+				}
+				.img-text {
+					padding: 0 10px;
+					line-height: 20px;
+					background: #ccc;
+					color: #333;
+				}
+			}
+			.btn-box {
+				padding: 10rpx 0;
+				display: flex;
+				width: 100%;
+				justify-content: center;
+				flex-wrap: wrap;
+				height: auto;
+				.btn {
+					border: 0;
+					border-radius: 8rpx;
+					padding: 0px;
+					margin: 0 0 20rpx 0;
+					color: #fff;
+					background: #FFD128;
+					width: 100%;
+					font-size: 32rpx;
+					line-height: 80rpx;
+					height: 80rpx;
+				}
+			}
+		}
+	}
+}

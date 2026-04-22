@@ -1,0 +1,9 @@
+<!--components/wx-popup/wx-popup.wxml-->
+<view wx:if="{{showPopup}}" class="wx-popup">
+		<view class="wx-popup__mask {{type=='top'?'wx-top-mask':(type=='center'?'wx-center-mask':'wx-bottom-mask')}}" bindtap="onTap" />
+		<view class="wx-popup__wrapper {{type=='top'?'top':(type=='center'?'center':'bottom')}}">
+			<view class="wx-popup__wrapper-box">
+				<slot></slot>
+			</view>
+		</view>
+	</view>

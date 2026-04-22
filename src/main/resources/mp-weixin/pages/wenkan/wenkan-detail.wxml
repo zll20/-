@@ -1,0 +1,11 @@
+<view class="wenkan-detail-container">
+  <view class="page-header">
+    <text class="page-title">{{mingcheng}}</text>
+  </view>
+
+  <scroll-view class="content-scroll" scroll-y="true" enable-back-to-top="true">
+    <view class="wenkan-content">
+      <rich-text nodes="{{wenkanneirong}}"></rich-text>
+    </view>
+  </scroll-view>
+</view>

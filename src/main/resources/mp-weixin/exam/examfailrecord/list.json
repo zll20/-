@@ -1,0 +1,9 @@
+{
+	"navigationBarTitleText": "错题本",
+	"navigationBarBackgroundColor": "#FFFFFF",
+	"navigationBarTextStyle": "black",
+	"onReachBottomDistance": 50,
+	"enablePullDownRefresh": true,
+	"usingComponents": {
+	}
+}

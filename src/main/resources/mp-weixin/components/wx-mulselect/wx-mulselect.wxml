@@ -1,0 +1,23 @@
+<view class="select-container" wx:if="{{show}}">
+		<view class="mask {{activeClass ? 'mask-show' : ''}}"  bindtap="onCancel"></view>
+		<view class="select-box {{activeClass ? 'select-box-show' : ''}}">
+			<view class="header">
+				<view class="cancel" bindtap="onCancel">取消</view>
+				<view class="all" bindtap="onAllToggle">
+					<view class="{{isAll ? 'all-active' : ''}}">全选</view>
+				</view>
+				<view class="confirm" bindtap="onConfirm">确认</view>
+			</view>
+			<view class="body-warp">
+				<scroll-view class="body" scroll-y="{{true}}">
+					<view wx:if="{{!list.length}}" name="tips">
+						<view class="empty-tips">暂无数据~</view>
+					</view>
+					<view wx:for="{{list}}" wx:key="index"  class="select-item {{item.disabled ? 'disabled' : ''}} {{selectedArr[index] ? 'selected' : ''}}" bindtap="onSelected" data-index="{{index}}">
+						<view class="label">{{item[labelName]}}</view>
+						<text wx:if="{{selectedArr[index]}}" class="selected-icon">✔</text>
+					</view>
+				</scroll-view>
+			</view>
+		</view>
+	</view>

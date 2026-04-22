@@ -1,0 +1,88 @@
+<wxs src="../../utils/format.wxs" module="format" />
+<view class="content">
+	<view class="center-box">
+		<view wx:if="{{user&&user.id}}" class="center-header-box">
+			<view wx:if="{{tableName=='xuesheng'}}" class="center-userinfo">
+				<image class="avatar" bindtap="userinfoClick" src="{{user.touxiang?baseurl+user.touxiang:require('../../static/upload.png')}}"></image>
+				<view class="info-box">
+					<view class="info-name">{{user.nicheng?user.nicheng:'未设置昵称'}}<text wx:if="{{user.vip&& user.vip=='是'}}">(VIP)</text></view>
+				</view>
+
+				<view class="setting-box" catchtap="settingClick">
+					<text class="icon iconfont icon-qita6"></text>
+					<text class="text">设置</text>
+				</view>
+			</view>
+		</view>
+		<view wx:else bindtap="loginClick" class="center-header-box">
+			<view class="unLogin-text">登录/注册</view>
+		</view>
+		<view class="center-list">
+				
+			<view class="center-menu-box">
+				<view class="menu-title">
+					<view class="text">我的服务</view>
+				</view>
+				<view class="me-menu-list">
+					<block wx:for="{{menuList}}" wx:key="index1" wx:for-index="index1">
+						<block wx:if="{{role==item.roleName}}" wx:key="index" wx:for="{{item.backMenu}}" wx:for-item="menu">
+							<block wx:key="sort" wx:for="{{menu.child}}" wx:for-item="child" wx:for-index="sort">
+								<view class="me-menu-item" wx:if="{{format.hasBack(child.tableName)}}" bindtap="onPageTap" data-url="{{'../'+child.tableName+'/list?userid='+user.id+'&menuJump='+child.menuJump}}" data-table-name="{{child.tableName}}">
+									<view class="me-menu-icon {{child.appFrontIcon}}"></view>
+									<view class="text">{{child.menu}}</view>
+									<view class="icon iconfont icon-jinru"></view>
+								</view>
+							</block>
+						</block>
+					</block>
+
+
+					<view wx:if="{{user&&user.id}}" bindtap="onPageTap" data-url="/forum/forum-my/forum-my" class="me-menu-item">
+						<view class="cuIcon-scan me-menu-icon"></view>
+						<view class="text">我的发贴</view>
+						<view class="icon iconfont icon-jinru"></view>
+					</view>
+				</view>
+			</view>
+		</view>
+		<!-- 推荐 -->
+		<view class="center-recommend-box" wx:if="{{recommendList.length}}">
+			<view class="recommend-title">为你推荐</view>
+			<view class="center-recommend-list">
+				<view class="center-recommend-item" wx:for="{{recommendList}}" wx:key="index" bindtap="recommendDetail" data-id="{{item.id}}">
+					<image class="list-item-image" wx:if="{{format.preHttp(item[recommendPicture])}}" :src="item[recommendPicture]"></image>
+					<image class="list-item-image" wx:else :src="item[recommendPicture]?(baseurl + item[recommendPicture].split(',')[0]):''"></image>
+					<view class="list-item-title">{{item[recommendTitle]}}</view>
+					<view class="list-item-time">{{item.addtime}}</view>
+				</view>
+			</view>
+		</view>
+		<view class="kong"></view>
+	</view>
+	<w-popup showPopup="{{showSettings}}" type="bottom" bind:cancel="settingClose" maskClick="{{true}}">
+		<view class="settingsPanel">
+			<view style="color: #000;text-align: center;width: 100%;line-height: 2;font-weight: bold;padding: 10px 0;">设置</view>
+			<view class="settingsBtnView">
+				<button class="settingsBtn passwordBtn" bindtap="passwordShow">修改密码</button>
+				<button class="settingsBtn logoutBtn" bindtap="logout">退出登录</button>
+			</view>
+		</view>
+	</w-popup>
+	<w-popup showPopup="{{updatePasswords}}" type="bottom" bind:cancel="passwordClose" maskClick="{{true}}">
+		<view class="passwordForm">
+			<view style="color: #000;text-align: center;width: 100%;line-height: 2;font-weight: bold;padding: 10px 0;">修改密码</view>
+			<view class="passwordInput">
+				<input password bindinput="psdKeyInput" data-name="mima" placeholder="原密码" />
+			</view>
+			<view class="passwordInput">
+				<input password bindinput="psdKeyInput" data-name="newmima" placeholder="新密码" />
+			</view>
+			<view class="passwordInput">
+				<input password bindinput="psdKeyInput" data-name="newmima1" placeholder="确认密码" />
+			</view>
+			<view class="passwordBtnView">
+				<button class="passwordBtn" bindtap="updatePassword">更新</button>
+			</view>
+		</view>
+	</w-popup>
+</view>

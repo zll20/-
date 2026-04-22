@@ -1,0 +1,11 @@
+{
+	"navigationBarTitleText": "弹窗提醒",
+	"navigationBarBackgroundColor": "#FFFFFF",
+	"navigationBarTextStyle": "black",
+	"onReachBottomDistance": 50,
+	"enablePullDownRefresh": true,
+	"usingComponents": {
+		"w-table": "/components/wx-table/wx-table",
+		"w-dpk": "/components/wx-datepicker/wx-datepicker"
+	}
+}

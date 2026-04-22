@@ -1,0 +1,39 @@
+.tr {
+  display: flex;
+  align-items: center;
+  padding: 10px 0;
+  width: 100%;
+}
+
+.td, .th {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0 10px;
+  height: 100%;
+}
+
+.th {
+  font-size: 15px;
+  min-width: 33%;
+  flex: 1;
+}
+
+.tr-stripe {
+  background: #fff;
+}
+.tr-stripe:nth-child(2n) {
+  background: #f0eeee;
+}
+
+.td {
+  font-size: 12px;
+  min-width: 33%;
+  flex: 1;
+}
+.nolist {
+  width: 100%;
+  padding: 30px 0;
+  text-align: center;
+  color: #999;
+}

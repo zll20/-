@@ -1,0 +1,18 @@
+  
+
+<view class="content">
+	<view class="add-box" wx:if="{{showType==1}}">
+		<form class="add-form">
+           
+			<view class="list-editor-item">
+				<view class="label">评论内容</view>
+				<w-edt class="editor-view" ref="editor" value="{{ruleForm.content}}" placeholder="评论内容" bind:editorChange="editorChange" data-name="content"></w-edt>
+			</view>
+			
+			<view class="btn-box" >
+				<button  bindtap="beforeSubmit" class="btn-confirm">提交</button>
+			</view>
+		</form>
+
+	</view>
+</view>

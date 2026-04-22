@@ -1,0 +1,97 @@
+<wxs src="../../utils/format.wxs" module="format" />
+<view class="content">
+	<view class="detail-container">
+		<view class="detail-content">
+
+			<view class="detail-list-item">
+				<view class="label">关联表id：</view>
+				<view class="text" >{{detail.refid}}</view>
+			</view>
+			<view class="detail-list-item">
+				<view class="label">置顶(1:置顶,0:非置顶)：</view>
+				<view class="text" >{{detail.istop}}</view>
+			</view>
+
+
+
+			<view class="detail-list-item">
+				<view class="label">评论内容：</view>
+				<view class="text">{{detail.content}}</view>
+			</view>
+			<view class="detail-list-item">
+				<view class="label">回复内容：</view>
+				<view class="text">{{detail.reply}}</view>
+			</view>
+			<view class="detail-list-item">
+				<view class="label">赞用户ids：</view>
+				<view class="text">{{detail.tuserids}}</view>
+			</view>
+			<view class="detail-list-item">
+				<view class="label">踩用户ids：</view>
+				<view class="text">{{detail.cuserids}}</view>
+			</view>
+
+
+
+
+			<view class="comment-box">
+				<view class="comment-header">
+					<view class="comment-header-title">评论</view>
+					<view bindtap="onCommentTap" class="comment-btn" style="display: flex;align-items: center;">
+						<view class="cuIcon-add"></view>
+						<view class="text">添加评论</view>
+					</view>
+				</view>
+			
+				<view wx:for="{{commentList}}" wx:key="index" class="cu-item comment-item">
+					<view class="istop" wx:if="{{item.istop}}">
+						<span class="icon iconfont icon-jiantou24"></span>
+					</view>
+					<view class="uinfo">
+						<image class="uinfo-img" wx:if="{{item.avatarurl}}" mode="aspectFill" src="{{baseurl+item.avatarurl}}"></image>
+						<view class="uinfo-name">{{item.nickname}}</view>
+					</view>
+					<view class="text-gray text-content text-df comment-content">
+						<rich-text nodes="{{item.content}}"></rich-text>
+					</view>
+					<view class="com-zanOrCai-box">
+						<view class="com-zan-box" wx:if="{{!item.comZanType&&!comCaiType}}" bindtap="comzanClick" data-item="{{item}}">
+							<span class="icon iconfont icon-zan07"></span>
+							<span class="label">赞</span>
+							<span class="num">({{item.thumbsupnum}})</span>
+						</view>
+						<view class="com-zan-active-box" wx:if="{{item.comZanType}}" bindtap="comzanClick" data-item="{{item}}">
+							<span class="icon iconfont icon-zan11"></span>
+							<span class="label">已赞</span>
+							<span class="num">({{item.thumbsupnum}})</span>
+						</view>
+						<view class="com-cai-box" wx:if="{{!item.comZanType&&!comCaiType}}" bindtap="comcaiClick" data-item="{{item}}">
+							<span class="icon iconfont icon-cai01"></span>
+							<span class="label">踩</span>
+							<span class="num">({{item.crazilynum}})</span>
+						</view>
+						<view class="com-cai-active-box" wx:if="{{comCaiType}}" bindtap="comcaiClick" data-item="{{item}}">
+							<span class="icon iconfont icon-cai16"></span>
+							<span class="label">已踩</span>
+							<span class="num">({{item.crazilynum}})</span>
+						</view>
+					</view>
+					<view class="margin-top-sm text-gray text-df com-time">{{item.addtime}}</view>
+					<view wx:if="{{item.reply}}" class="text-gray text-content text-df comment-content">
+						回复:<rich-text nodes="{{item.reply}}"></rich-text>
+					</view>
+					<view class="com-btn-box" wx:if="{{user&&user.id==item.userid}}">
+						<view class="com-del" bindtap="delClick" data-id="{{item.id}}">删除</view>
+					</view>
+				</view>
+			</view>
+
+			<view class="bottom-content bg-white button-box">
+
+			</view>
+		</view>
+	</view>
+	<view class="scrollTop" wx:if="{{scrollTop>200}}" bindtap="scrollTopClick">
+		<span class="icon iconfont icon-jiantou07"></span>
+	</view>
+</view>

@@ -1,0 +1,36 @@
+  
+
+<view class="content">
+	<view class="add-box" wx:if="{{showType==1}}">
+		<form class="add-form">
+			<view class="list-item">
+				<view class="label">姓名</view>
+				<input class="inp" disabled="{{ro.xingming}}" value="{{ruleForm.xingming}}" placeholder="姓名"  type="text" bindinput="bindKeyInput" data-name="xingming"></input>
+			</view>
+			<view class="list-item">
+				<view class="label">日期</view>
+				<picker class="picker-box" mode="date" value="{{ruleForm.riqi}}" bindchange="dateChange" data-columnname="riqi" disabled="{{ro.riqi}}">
+					<view class="picker-text">{{ruleForm.riqi?ruleForm.riqi:"请选择日期"}}</view>
+				</picker>
+			</view>
+			<view class="list-item">
+				<view class="label">学习时长</view>
+				<input class="inp" disabled="{{ro.xuexishizhang}}" value="{{ruleForm.xuexishizhang}}" placeholder="学习时长" type="digit" bindinput="bindKeyInput" data-name="xuexishizhang"></input>
+			</view>
+			<view class="list-item">
+				<view class="label">学习任务</view>
+				<input class="inp" disabled="{{ro.xuexirenwu}}" value="{{ruleForm.xuexirenwu}}" placeholder="学习任务"  type="text" bindinput="bindKeyInput" data-name="xuexirenwu"></input>
+			</view>
+			<view class="list-item">
+				<view class="label">复习计划</view>
+				<input class="inp" disabled="{{ro.fuxijihua}}" value="{{ruleForm.fuxijihua}}" placeholder="复习计划"  type="text" bindinput="bindKeyInput" data-name="fuxijihua"></input>
+			</view>
+      
+			
+			<view class="btn-box" >
+				<button  bindtap="beforeSubmit" class="btn-confirm">提交</button>
+			</view>
+		</form>
+
+	</view>
+</view>

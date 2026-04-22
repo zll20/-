@@ -1,0 +1,10 @@
+{
+	"navigationBarTitleText": "管理员",
+	"navigationBarBackgroundColor": "#FFFFFF",
+	"navigationBarTextStyle": "black",
+	"onReachBottomDistance": 50,
+	"enablePullDownRefresh": true,
+	"usingComponents": {
+		"w-dpk": "/components/wx-datepicker/wx-datepicker"
+	}
+}

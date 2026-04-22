@@ -1,0 +1,32 @@
+<view class="content">
+	<view class="forget-box" wx:if="{{type==1}}">
+		<view class="forget-form">
+			<view class="forget-input">
+				<input data-name="username" bindinput="bindKeyInput" type="text" placeholder="请输入您的账号" />
+			</view>
+			<button class="forgetbtn" bindtap="nextClick">下一步</button>
+		</view>
+	</view>
+	<view class="forget-box" wx:if="{{type==2}}">
+		<view class="forget-form">
+			<view class="forget-input">
+				<input value="{{userForm.pquestion}}" type="text" placeholder="密保问题" disabled="disabled"/>
+			</view>
+			<view class="forget-input">
+				<input data-name="panswer1" bindinput="bindKeyInput" type="text" placeholder="密保答案" />
+			</view>
+			<button class="forgetbtn" bindtap="confirmClick">确定</button>
+		</view>
+	</view>
+	<view class="forget-box" wx:if="{{type==3}}">
+		<view class="forget-form">
+			<view class="forget-input">
+				<input data-name="password" bindinput="bindKeyInput" type="password" placeholder="密码" />
+			</view>
+			<view class="forget-input">
+				<input data-name="repassword" bindinput="bindKeyInput" type="password" placeholder="确认密码" />
+			</view>
+			<button class="forgetbtn" bindtap="updateClick">修改密码</button>
+		</view>
+	</view>
+</view>

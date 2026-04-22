@@ -1,0 +1,24 @@
+<view class="list-search-box">
+	<view class="search-form">
+		<text class="icon iconfont icon-fangdajing07"></text>
+		<input placeholder-style="color: #333" value="{{searchForm.name}}" type="text" placeholder="试卷名称" bindinput="searchKeyInput"></input>
+	</view>
+	<button bindtap="search" class="search-btn">搜索</button>
+</view>
+<view>
+<!--header end-->
+<view class="list">
+	<view bindtap="onDetailTap" data-item="{{item}}" wx:for="{{list}}" wx:key="index" class="listm">
+		<image src="../../static/paper/paper.png" mode="widthFix" class="listmpic mt10"></image>
+		<view class="listmr">
+			<view class="name">{{item.name}}</view>
+			<view class="time">考试时长：{{item.time}}分钟</view>
+			<button size="mini" class="examClick">点击考试</button>
+		</view>
+	</view>
+</view>
+<!--list end-->
+</view>
+<view class="scrollTop" wx:if="{{scrollTop>200}}" bindtap="scrollTopClick">
+	<span class="icon iconfont icon-jiantou07"></span>
+</view>

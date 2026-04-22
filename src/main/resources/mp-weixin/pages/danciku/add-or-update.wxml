@@ -1,0 +1,46 @@
+  
+
+<view class="content">
+	<view class="add-box" wx:if="{{showType==1}}">
+		<form class="add-form">
+			<view class="list-item">
+				<view class="label">单词</view>
+				<input class="inp" disabled="{{ro.danci}}" value="{{ruleForm.danci}}" placeholder="单词"  type="text" bindinput="bindKeyInput" data-name="danci"></input>
+			</view>
+			<view class="list-item">
+				<view class="label">级别</view>
+				<picker class="picker-box" disabled="{{ro.jibie}}" bindchange="selChange" data-columnname="jibie" value="{{jibieIndex}}" range="{{jibieOptions}}">
+					<view class="picker-text">{{ruleForm.jibie?ruleForm.jibie:"请选择级别"}}</view>
+				</picker>
+			</view>
+			<view class="list-item">
+				<view class="label">单词分类</view>
+				<picker class="picker-box" disabled="{{ro.dancifenlei}}" bindchange="selChange" data-columnname="dancifenlei" value="{{dancifenleiIndex}}" range="{{dancifenleiOptions}}">
+					<view class="picker-text">{{ruleForm.dancifenlei?ruleForm.dancifenlei:"请选择单词分类"}}</view>
+				</picker>
+			</view>
+			<view class="list-item">
+				<view class="label">释义</view>
+				<input class="inp" disabled="{{ro.shiyi}}" value="{{ruleForm.shiyi}}" placeholder="释义"  type="text" bindinput="bindKeyInput" data-name="shiyi"></input>
+			</view>
+			<view class="list-item">
+				<view class="label">例句</view>
+				<input class="inp" disabled="{{ro.liju}}" value="{{ruleForm.liju}}" placeholder="例句"  type="text" bindinput="bindKeyInput" data-name="liju"></input>
+			</view>
+			<view class="list-item"
+				bindtap="uploadTap" data-mediatype="image"
+				data-columnname="fengmiantu">
+				<view class="label">封面图</view>
+				<image class="upload-img" wx:if="{{ruleForm.fengmiantu}}" src="{{baseurl+ruleForm.fengmiantu}}" mode="aspectFill"></image>
+				<image class="upload-img" wx:else src="../../static/upload.png" mode="aspectFill"></image>
+			</view>
+         
+			
+			<view class="btn-box" >
+				<button  bindtap="beforeSubmit" class="btn-confirm">提交</button>
+			</view>
+		</form>
+
+		<w-dpk showType="{{clicktimeShow}}" bind:dateChange="dateTimeChange" data-columnname="clicktime" bind:datePickerCancellEvent="dateTimeCancel"></w-dpk>
+	</view>
+</view>

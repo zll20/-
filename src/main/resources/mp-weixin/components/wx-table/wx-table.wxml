@@ -1,0 +1,20 @@
+<scroll-view class="header" scroll-x="true" scroll-left="{{headerScrollLeft}}" style="pointer-events: none; position: sticky; top: 0; z-index: 100;">
+  <view class="tr">
+    <view class="th" style="min-width: {{minWidth}}px; {{borderline ? 'border: 0.1px solid black;' : ''}} background:{{headerBackground}};color:{{headerColor}}" wx:for="{{columnNames}}" wx:key="*this" wx:for-item="colName">
+      <text>{{colName.label}}</text>
+    </view>
+  </view>
+</scroll-view>
+
+<!-- 表格内容 -->
+<!-- table数组的每个数组元素作为rowDatas，rowDatas是一个包含该行所有信息的数组，故还可以循环展开 -->
+<scroll-view wx:if="{{columnNames.length != 0}}" scroll-x="true" bindscroll="syncScroll" style="padding-top: {{headerHeight}}rem;">
+
+  <view class="tr {{stripe ? 'tr-stripe' : ''}}" wx:for="{{tableData}}" wx:key="*this" wx:for-index='rowIndex' wx:for-item="rowData" bindtap="onCellTap" data-row="{{rowData}}">
+    <view class="td" style=" min-width: {{minWidth}}px; {{borderline ? 'border: 0.1px solid black;' : ''}} {{(stripe && (rowIndex % 2 == 1)) ? 'background: #f0eeee;' : '' }}" wx:for="{{columnNames}}" wx:key="*this" wx:for-index='colIndex' wx:for-item="col">
+    <span wx:if="{{col.type=='num'}}">{{rowData[col.name]}}</span>
+    <rich-text wx:else nodes="{{rowData[col.name]}}"/>
+    </view>
+  </view>
+  <view wx:if="{{tableData.length==0}}" class="nolist">暂无数据</view>
+</scroll-view>

@@ -1,0 +1,69 @@
+<wxs src="../../utils/format.wxs" module="format" />
+<view class="forum-detail-box">
+		<swiper class="detail-swiper-box" 
+			indicator-dots="{{false}}" autoplay="{{false}}" 
+			circular="{{false}}" 
+			indicator-active-color="#000000" 
+			indicator-color="rgba(0, 0, 0, .3)" duration="{{500}}" 
+			interval="{{5000}}" vertical="{{false}}">
+			<swiper-item class="swiper-item" wx:for="{{swiperList}}" wx:key="index" wx:for-item="swiper">
+				<image wx:if="{{format.preHttp(swiper)}}" src="{{swiper}}" bindtap="imgView2" data-url="{{swiper}}" mode="aspectFill"></image>
+				<image wx:else src="{{baseurl+swiper}}" bindtap="imgView2" data-url="{{baseurl + swiper}}" mode="aspectFill"></image>
+			</swiper-item>
+		</swiper>
+	<view class="forum-title">
+		{{forum.title}}
+	</view>
+	<view class="publisher-box">
+		<span class="icon iconfont icon-touxiang18"></span>
+		<span class="label">发布人：</span>
+		<span class="text">{{forum.userid!=userid&&forum.isanon==1?'匿名':forum.username}}</span>
+	</view>
+	<view class="forum-content">
+		<rich-text nodes="{{forum.content}}"></rich-text>
+	</view>
+	<view class="comment-list">
+		<view class="comment-item" wx:for="{{commentData}}" wx:for-item="comment" wx:key="index">
+			<view class="user-box">
+				<image class="image" src="{{baseurl+comment.avatarurl}}" mode="widthFix"></image>
+				<view class="info-box">
+					<view class="nickname">
+						{{comment.username}}
+					</view>
+					<view class="time"> {{comment.addtime}}</view>
+				</view>
+			</view>
+			<view class="comment-content-box">
+				<rich-text class="comment-content" nodes="{{comment.content}}"></rich-text>
+				<view class="opera-box">
+					<view class="reply-btn" bindtap="onReplyTap" data-id="{{comment.id}}">回复</view>
+					<view class="del-btn" bindtap="delClick" data-id="{{comment.id}}" wx:if="{{userid==comment.userid}}">删除</view>
+				</view>
+			</view>
+			<view class="reply-list" wx:if="{{comment.childs}}">
+				<view class="reply-item" wx:for="{{comment.childs}}" wx:for-index="indexs" wx:key="indexs">
+					<view class="reply-user-box">
+						<image class="reply-image" src="{{baseurl+item.avatarurl}}" mode="widthFix"></image>
+						<view class="reply-info-box">
+							<view class="reply-nickname">
+								{{item.username}}
+							</view>
+							<view class="reply-time">{{item.addtime}}</view>
+						</view>
+					</view>
+					<view class="reply-content-box">
+						<rich-text class="reply-content" nodes="{{item.content}}"></rich-text>
+						<view class="reply-opera-box">
+							<text class="reply-del" bindtap="delClick" data-id="{{item.id}}" wx:if="{{userid==item.userid}}">删除</text>
+						</view>
+					</view>
+				</view>
+			</view>
+		</view>
+		<view class="kong"></view>
+		
+		<view class="bottom-content">
+			<button bindtap="onReplyTap" data-id="{{forum.id}}" class="bg-red margin-tb-sm">评论</button>
+		</view>
+	</view>
+</view>

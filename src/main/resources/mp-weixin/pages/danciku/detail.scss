@@ -1,0 +1,548 @@
+
+.content {
+	min-height: 100vh;
+	box-sizing: border-box;
+	.detail-container {
+		padding: 0;
+		background: #F6F7F9;
+		width: 100%;
+		min-height: 100%;
+		position: relative;
+		height: auto;
+		.detail-swiper-box {
+			background: #fff;
+			width: 100%;
+			height: 360rpx;
+			.swiper-item {
+				background: #fff;
+				width: 100%;
+				height: 360rpx;
+				image {
+					object-fit: cover;
+					display: block;
+					width: 100%;
+					height: 360rpx;
+				}
+			}
+		}
+		.detail-content {
+			border-radius: 30rpx;
+			padding: 24rpx;
+			background: #fff;
+			display: flex;
+			width: 100%;
+			flex-wrap: wrap;
+			height: auto;
+			.list-item-price {
+				margin: 0 0 0px 0;
+				display: flex;
+				width: 100%;
+				border-color: #cccccc;
+				border-width: 0;
+				justify-content: space-between;
+				align-items: center;
+				border-style: solid;
+				flex-wrap: wrap;
+				height: auto;
+				.price-text {
+					display: flex;
+					.yuan {
+						color: #B30000;
+						font-size: 32rpx;
+						line-height: 80rpx;
+					}
+					.num {
+						color: #B30000;
+						font-size: 32rpx;
+						line-height: 80rpx;
+					}
+					.text {
+						padding: 0px;
+						margin: 0px;
+						color: #666;
+						font-size: 28rpx;
+						line-height: 48rpx;
+					}
+				}
+				.collect-active-box {
+					padding: 0 20rpx;
+					background: #FFD128;
+					display: flex;
+					.iconfont {
+						margin: 0 8rpx 0 0;
+						color: #fff;
+						font-size: 28rpx;
+						line-height: 50rpx;
+					}
+					.text {
+						color: #fff;
+						font-size: 28rpx;
+						line-height: 50rpx;
+					}
+				}
+				.collect-box {
+					padding: 0 30rpx;
+					background: #FFD128;
+					display: flex;
+					.iconfont {
+						margin: 0 8rpx 0 0;
+						color: #fff;
+						font-size: 28rpx;
+						line-height: 50rpx;
+					}
+					.text {
+						color: #fff;
+						font-size: 28rpx;
+						line-height: 50rpx;
+					}
+				}
+			}
+			.detail-list-item {
+				padding: 0;
+				margin: 0 0 0px 0;
+				display: flex;
+				width: 100%;
+				border-color: #cccccc;
+				border-width: 0;
+				border-style: solid;
+				height: auto;
+				.label {
+					padding: 0 20rpx 0 0;
+					color: #000;
+					white-space: nowrap;
+					font-weight: bold;
+					width: auto;
+					font-size: 28rpx;
+					line-height: 48rpx;
+					text-align: right;
+				}
+				.text {
+					padding: 0px;
+					margin: 0px;
+					color: #666;
+					font-size: 28rpx;
+					line-height: 48rpx;
+				}
+			}
+			.detail-audio-item {
+				margin: 20rpx 0 0;
+				width: 100%;
+				height: auto;
+				.label {
+					padding: 0 20rpx 0 0;
+					color: #000;
+					white-space: nowrap;
+					font-weight: bold;
+					width: auto;
+					font-size: 28rpx;
+					line-height: 48rpx;
+					text-align: right;
+				}
+				.text {
+					padding: 0px;
+					margin: 0px;
+					color: #666;
+					font-size: 28rpx;
+					line-height: 48rpx;
+				}
+				audio {
+					width: 100%;
+					height: 80rpx;
+				}
+			}
+			.detail-img-item {
+				margin: 0 0 10rpx;
+				display: flex;
+				width: 100%;
+				border-color: #ccc;
+				border-width: 0;
+				border-style: solid;
+				height: auto;
+				image {
+					border-radius: 100%;
+					object-fit: cover;
+					display: block;
+					width: 80rpx;
+					height: 80rpx;
+				}
+			}
+			.detail-video-item {
+				margin: 0 0 10rpx;
+				display: flex;
+				width: 100%;
+				border-color: #ccc;
+				border-width: 0;
+				border-style: solid;
+				height: auto;
+				order: 2;
+				video {
+					border: 0;
+					border-radius: 8rpx;
+					margin: 0;
+					outline: none;
+					display: block;
+					width: 100%;
+				}
+			}
+			.detail-rich-item {
+				margin: 0 0 10rpx;
+				display: flex;
+				width: 100%;
+				border-color: #ccc;
+				border-width: 0;
+				border-style: solid;
+				height: auto;
+				order: 3;
+				.label {
+					padding: 0 20rpx 0 0;
+					color: #333;
+					white-space: nowrap;
+					font-weight: 600;
+					display: flex;
+					width: auto;
+					font-size: 28rpx;
+					line-height: 48rpx;
+					text-align: right;
+				}
+				.rich-text {
+					padding: 0 24rpx 24rpx 0;
+					margin: 0;
+					width: 100%;
+					line-height: 48rpx;
+				}
+			}
+			.comment-box {
+				margin: 0 0 10rpx;
+				width: 100%;
+				height: auto;
+				order: 4;
+				.comment-header {
+					border: 2rpx solid #FFD128;
+					box-shadow: none;
+					display: flex;
+					width: 100%;
+					justify-content: space-between;
+					height: auto;
+					.comment-header-title {
+						padding: 0 24rpx;
+						color: #FFD128;
+						font-size: 28rpx;
+						line-height: 80rpx;
+					}
+					.comment-btn {
+						padding: 0 20rpx;
+						background: #FFD128;
+						display: flex;
+						.cuIcon-add {
+							margin: 0 8rpx 0 0;
+							color: #fff;
+							font-size: 28rpx;
+							line-height: 80rpx;
+						}
+						.text {
+							color: #fff;
+							font-size: 28rpx;
+							line-height: 80rpx;
+						}
+					}
+				}
+				.comment-item {
+					box-shadow: none;
+					padding: 24rpx;
+					margin: 24rpx 0 0 0;
+					width: 100%;
+					border-color: #D8D8D8;
+					border-width: 0 0 2rpx;
+					position: relative;
+					border-style: solid;
+					height: auto;
+					.istop {
+						box-shadow: none;
+						top: 0;
+						background: #fff;
+						position: absolute;
+						right: 20rpx;
+						.iconfont {
+							color: #000;
+						}
+					}
+					.uinfo {
+						display: flex;
+						width: 100%;
+						height: auto;
+						.uinfo-img {
+							border-radius: 100%;
+							margin: 0 8rpx 0 0;
+							display: block;
+							width: 60rpx;
+							height: 60rpx;
+						}
+						.uinfo-name {
+							color: #333;
+							font-size: 28rpx;
+							line-height: 60rpx;
+						}
+					}
+					.comment-content {
+						margin: 8rpx 0;
+						color: #666;
+						font-size: 28rpx;
+						line-height: 1.5;
+					}
+					.com-zanOrCai-box {
+						margin: 16rpx 0 0 0;
+						display: flex;
+						width: 100%;
+						justify-content: flex-end;
+						align-items: center;
+						height: 60rpx;
+						.com-zan-box {
+							display: flex;
+							align-items: center;
+							.iconfont {
+								font-size: 28rpx;
+							}
+							.label {
+								display: none;
+								font-size: 28rpx;
+							}
+							.num {
+								font-size: 28rpx;
+							}
+						}
+						.com-zan-active-box {
+							background: none;
+							.iconfont {
+								color: #ff0000;
+								font-size: 28rpx;
+							}
+							.label {
+								color: #ff0000;
+								display: none;
+								font-size: 28rpx;
+							}
+							.num {
+								color: #ff0000;
+								font-size: 28rpx;
+							}
+						}
+						.com-cai-box {
+							display: flex;
+							align-items: center;
+							.iconfont {
+								font-size: 28rpx;
+							}
+							.label {
+								display: none;
+								font-size: 28rpx;
+							}
+							.num {
+								font-size: 28rpx;
+							}
+						}
+						.com-cai-active-box {
+							background: none;
+							.iconfont {
+								color: #ff0000;
+								font-size: 28rpx;
+							}
+							.label {
+								color: #ff0000;
+								display: none;
+								font-size: 28rpx;
+							}
+							.num {
+								color: #ff0000;
+								font-size: 28rpx;
+							}
+						}
+					}
+					.com-time {
+						color: #999;
+						font-size: 24rpx;
+						line-height: 24rpx;
+					}
+					.com-btn-box {
+						display: flex;
+						display: flex;
+						justify-content: flex-end;
+						padding: 6rpx 0;
+						.com-del {
+							color: #999;
+							font-size: 16rpx;
+						}
+					}
+				}
+			}
+			.button-box {
+				border-radius: 20rpx;
+				padding: 20rpx 10rpx;
+				margin: 20rpx 0;
+				background: #EDEDED;
+				display: flex;
+				width: 100%;
+				flex-wrap: wrap;
+				height: auto;
+				order: 1;
+				.cross-btn {
+					border: 0;
+					padding: 0 20rpx;
+					margin: 0 10rpx 10rpx 0;
+					color: #000;
+					background: #fff;
+					width: auto;
+					font-size: 28rpx;
+					line-height: 60rpx;
+					height: 60rpx;
+				}
+				.buy-btn {
+					border: 0;
+					padding: 0 20rpx;
+					margin: 0 10rpx 10rpx 0;
+					color: #000;
+					background: #fff;
+					width: auto;
+					font-size: 28rpx;
+					line-height: 60rpx;
+					height: 60rpx;
+				}
+				.shen-btn {
+					border: 0;
+					padding: 0 20rpx;
+					margin: 0 10rpx 10rpx 0;
+					color: #000;
+					background: #fff;
+					width: auto;
+					font-size: 28rpx;
+					line-height: 60rpx;
+					height: 60rpx;
+				}
+				.wan-btn {
+					border: 0;
+					padding: 0 20rpx;
+					margin: 0 10rpx 10rpx 0;
+					color: #999;
+					background: #fff;
+					width: auto;
+					font-size: 28rpx;
+					line-height: 60rpx;
+					height: 60rpx;
+				}
+				.forecast-btn {
+					border: 0;
+					padding: 0 20rpx 0 20rpx;
+					margin: 0;
+					color: #333;
+					background: #fff;
+					width: auto;
+					font-size: 28rpx;
+					height: 60rpx;
+				}
+			}
+		}
+		.map-view {
+			width: 100%;
+			padding: 0 20px;
+		}
+	}
+}
+.scrollTop {
+	border-radius: 50%;
+	box-shadow: 0 8rpx 16rpx rgba(0,0,0,.3);
+	z-index: 999;
+	bottom: 20%;
+	background: #ff000030;
+	width: 60rpx;
+	line-height: 60rpx;
+	position: fixed;
+	right: 20rpx;
+	text-align: center;
+	height: 60rpx;
+	.iconfont {
+		color: #fff;
+	}
+}
+.btn-content {
+	display: flex;
+	align-items: center;
+}
+
+/* 读音音频按钮悬停效果 */
+.audio-btn-hover {
+	filter: drop-shadow(0 4rpx 8rpx rgba(0,0,0,0.3));
+	transform: scale(1.05);
+}
+
+/* 导航按钮样式 - 椭圆形，底部两侧分布 */
+.navigation-buttons {
+	position: fixed;
+	bottom: 100rpx;
+	left: 0;
+	right: 0;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 0 40rpx;
+	z-index: 9999;
+	pointer-events: none;
+
+	button {
+		&::after {
+			border: none;
+		}
+
+		&:active {
+			opacity: 0.9;
+			transform: scale(0.98);
+		}
+	}
+}
+
+.nav-btn {
+	width: 280rpx;
+	height: 120rpx;
+	border-radius: 60rpx;
+	background: #FFD128;
+	color: #fff;
+	font-size: 28rpx;
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: center;
+	box-shadow: 0 8rpx 24rpx rgba(255,209,40,0.4);
+	border: none;
+	pointer-events: auto;
+	line-height: 1.4;
+}
+
+.nav-btn .icon {
+	font-size: 36rpx;
+	margin: 0 12rpx 0 0;
+}
+
+.nav-btn-hover {
+	opacity: 0.9;
+	transform: scale(0.98);
+	box-shadow: 0 12rpx 32rpx rgba(255,209,40,0.6) !important;
+}
+
+.nav-btn-disabled {
+	width: 280rpx;
+	height: 120rpx;
+	border-radius: 60rpx;
+	background: #ccc;
+	color: #999;
+	font-size: 28rpx;
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: center;
+	box-shadow: none;
+	pointer-events: auto;
+	line-height: 1.4;
+}
+
+.nav-btn-disabled .icon {
+	font-size: 36rpx;
+	margin: 0 12rpx 0 0;
+}

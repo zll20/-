@@ -1,0 +1,27 @@
+<view class="wenkan-list-container">
+  <view class="page-header">
+    <text class="page-title">{{jibie}}文刊</text>
+  </view>
+
+  <view class="content-area">
+    <view class="empty-tip" wx:if="{{wenkanList.length === 0}}">
+      <text class="empty-text">暂无文刊</text>
+    </view>
+    <view class="wenkan-list" wx:else>
+      <view
+        wx:for="{{wenkanList}}"
+        wx:key="id"
+        class="wenkan-item"
+        bindtap="viewWenkan"
+        data-item="{{item}}"
+      >
+        <view class="wenkan-icon">📄</view>
+        <view class="wenkan-info">
+          <text class="wenkan-name">{{item.mingcheng}}</text>
+          <text class="wenkan-jibie">{{item.jibie}}</text>
+        </view>
+        <view class="wenkan-arrow">›</view>
+      </view>
+    </view>
+  </view>
+</view>

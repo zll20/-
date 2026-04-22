@@ -1,0 +1,510 @@
+.content {
+	min-height: 100vh;
+	box-sizing: border-box;
+	.list-box {
+		padding: 40rpx 20rpx 198rpx;
+		background: #F6F7F9;
+		width: 100%;
+		min-height: 100%;
+		position: relative;
+		height: auto;
+		.list-search-box {
+			padding: 0;
+			background: none;
+			display: flex;
+			width: 100%;
+			height: auto;
+			order: 1;
+			.search-form {
+				margin: 0;
+				flex: 1;
+				position: relative;
+				.iconfont {
+					color: #FFD128;
+					left: 0px;
+					width: 80rpx;
+					font-size: 40rpx;
+					line-height: 80rpx;
+					position: absolute;
+					right: 0px;
+					text-align: center;
+				}
+				input {
+					border: 2rpx solid #FFD128;
+					border-radius: 12rpx 0 0 12rpx;
+					padding: 12rpx 20rpx 12rpx 80rpx;
+					color: #333;
+					background: #fff;
+					width: 100%;
+					font-size: 28rpx;
+					line-height: 56rpx;
+					height: 80rpx;
+				}
+			}
+			.search-btn {
+				border: 0;
+				border-radius: 0 12rpx 12rpx 0;
+				padding: 0px;
+				margin: 0;
+				color: #fff;
+				background: #FFD128;
+				width: 136rpx;
+				font-size: 28rpx;
+				line-height: 80rpx;
+				height: 80rpx;
+			}
+		}
+		.sort-box {
+			border-radius: 20rpx;
+			padding: 20rpx;
+			margin: 40rpx 0 40rpx 0;
+			background: #fff;
+			display: flex;
+			width: 100%;
+			justify-content: center;
+			flex-wrap: wrap;
+			.sort-time-item {
+				border: 0;
+				border-radius: 8rpx;
+				padding: 0 12rpx;
+				margin: 0 8rpx 0 0;
+				outline: 0;
+				background: none;
+				display: flex;
+				.text {
+					color: #333;
+					font-size: 24rpx;
+					line-height: 48rpx;
+				}
+				.iconfont {
+					margin: 0 0 0 8rpx;
+					color: #333;
+					font-size: 24rpx;
+					line-height: 48rpx;
+				}
+			}
+		}
+		.list-box1 {
+			background: none;
+			width: 100%;
+			height: auto;
+			.list2 {
+				padding: 0;
+				margin: 40rpx 0 0 0;
+				width: 100%;
+				height: auto;
+				.list-item {
+					border-radius: 20rpx;
+					box-shadow: 0 2rpx 12rpx #dddddd;
+					padding: 20rpx;
+					margin: 0 0 30rpx 0;
+					align-content: space-between;
+					background: #fff;
+					display: flex;
+					width: 100%;
+					position: relative;
+					flex-wrap: wrap;
+					height: auto;
+					.list-item-image {
+						border-radius: 12rpx;
+						object-fit: cover;
+						display: block;
+						width: 30%;
+						height: 240rpx;
+					}
+					.infoBox {
+						padding: 0 20rpx;
+						margin: 0;
+						align-content: center;
+						display: flex;
+						width: 68%;
+						flex-wrap: wrap;
+						height: auto;
+						.list-item-title {
+							padding: 0;
+							margin: 0;
+							overflow: hidden;
+							color: #333;
+							white-space: nowrap;
+							width: 100%;
+							font-size: 28rpx;
+							line-height: 48rpx;
+							text-overflow: ellipsis;
+						}
+						.list-item-price {
+							border-radius: 0 20rpx;
+							padding: 0 30rpx;
+							margin: 0;
+							color: #fff;
+							top: 0;
+							background: #FFD128;
+							width: auto;
+							font-size: 32rpx;
+							line-height: 50rpx;
+							position: absolute;
+							right: 0;
+							text-align: right;
+						}
+						.time-box {
+							padding: 0 10rpx 0 0;
+							order: 5;
+							.iconfont {
+								margin: 0 4rpx 0 0;
+								color: #666;
+								font-size: 24rpx;
+								line-height: 50rpx;
+							}
+							.text {
+								color: #666;
+								font-size: 24rpx;
+								line-height: 50rpx;
+							}
+						}
+						.publisher-box {
+							padding: 0 10rpx 0 0;
+							order: 4;
+							.iconfont {
+								margin: 0 4rpx 0 0;
+								color: #666;
+								font-size: 24rpx;
+								line-height: 50rpx;
+							}
+							.text {
+								color: #666;
+								font-size: 24rpx;
+								line-height: 50rpx;
+							}
+						}
+						.like-box {
+							padding: 0 10rpx 0 0;
+							display: inline-block;
+							order: 1;
+							.iconfont {
+								margin: 0 4rpx 0 0;
+								color: #666;
+								font-size: 24rpx;
+								line-height: 50rpx;
+							}
+							.text {
+								color: #666;
+								font-size: 24rpx;
+								line-height: 50rpx;
+							}
+						}
+						.collect-box {
+							padding: 0 10rpx 0 0;
+							display: inline-block;
+							order: 2;
+							.iconfont {
+								margin: 0 4rpx 0 0;
+								color: #666;
+								font-size: 24rpx;
+								line-height: 50rpx;
+							}
+							.text {
+								color: #666;
+								font-size: 24rpx;
+								line-height: 50rpx;
+							}
+						}
+						.view-box {
+							padding: 0 10rpx 0 0;
+							display: inline-block;
+							order: 3;
+							.iconfont {
+								margin: 0 4rpx 0 0;
+								color: #666;
+								font-size: 24rpx;
+								line-height: 50rpx;
+							}
+							.text {
+								color: #666;
+								font-size: 24rpx;
+								line-height: 50rpx;
+							}
+						}
+					}
+					.operate-box {
+						padding: 20rpx 20rpx;
+						display: flex;
+						width: 100%;
+						justify-content: space-between;
+						height: auto;
+						.edit-box {
+							display: flex;
+							.cuIcon-edit {
+								margin: 0 8rpx 0 0;
+								color: #3ab5f5;
+								display: inline-block;
+								font-size: 28rpx;
+								line-height: 1;
+							}
+							.text {
+								color: #3ab5f5;
+								display: inline-block;
+								font-size: 28rpx;
+								line-height: 1;
+							}
+						}
+						.del-box {
+							display: flex;
+							.cuIcon-delete {
+								margin: 0 8rpx 0 0;
+								color: #ff0000;
+								display: inline-block;
+								font-size: 28rpx;
+								line-height: 1;
+							}
+							.text {
+								color: #ff0000;
+								display: inline-block;
+								font-size: 28rpx;
+								line-height: 1;
+							}
+						}
+					}
+				}
+			}
+		}
+		.screen-btn {
+			border: 0;
+			margin: 20rpx 0 0 10rpx;
+			z-index: 99;
+			color: #fff;
+			white-space: nowrap;
+			display: flex;
+			font-size: 28rpx;
+			line-height: 80rpx;
+			right: 20rpx;
+			border-radius: 80rpx;
+			outline: none;
+			top: 190rpx;
+			background: #F49843;
+			width: 80rpx;
+			justify-content: center;
+			align-items: center;
+			position: absolute;
+			height: 80rpx;
+		}
+		.add-btn {
+			border: 0;
+			margin: 20rpx 0 0 10rpx;
+			z-index: 99;
+			color: #fff;
+			white-space: nowrap;
+			bottom: 170rpx;
+			display: flex;
+			font-size: 28rpx;
+			line-height: 80rpx;
+			right: 20rpx;
+			border-radius: 80rpx;
+			outline: none;
+			background: #F49843;
+			width: 80rpx;
+			justify-content: center;
+			align-items: center;
+			position: absolute;
+			height: 80rpx;
+		}
+		.statics-btn {
+			border: 0;
+			margin: 20rpx 0 0 10rpx;
+			z-index: 99;
+			color: #ffffff;
+			white-space: nowrap;
+			display: flex;
+			font-size: 28rpx;
+			line-height: 80rpx;
+			border-radius: 80rpx;
+			outline: none;
+			top: 190rpx;
+			left: 10rpx;
+			background: #ffaa33;
+			width: 80rpx;
+			justify-content: center;
+			align-items: center;
+			position: absolute;
+			height: 80rpx;
+		}
+	}
+	.screenBoxBg {
+		z-index: 665;
+		top: 0;
+		left: 0;
+		background: rgba(0, 0, 0, .3);
+		width: 100%;
+		position: fixed;
+		height: 100%;
+	}
+	.screenBox {
+		padding: 180rpx 0 20rpx 0;
+		transform: translate3d(100%, 0, 0);
+		z-index: 1000;
+		top: 0;
+		background: #FFFDF6;
+		width: 80%;
+		position: fixed;
+		right: 0;
+		transition: transform .3s;
+		height: 100%;
+		.time-box {
+			padding: 20rpx 0 20rpx 0;
+			display: flex;
+			width: 100%;
+			align-items: center;
+			.label {
+				padding: 0 20rpx;
+				white-space: nowrap;
+				width: auto;
+				font-size: 28rpx;
+			}
+			.time-item {
+				flex: 1;
+				display: flex;
+				width: 100%;
+				align-items: center;
+				flex-wrap: wrap;
+				.time-input {
+					border-radius: 40rpx;
+					background: #eee;
+					width: 40%;
+					line-height: 60rpx;
+					text-align: center;
+					height: 60rpx;
+				}
+				.time-text {
+					padding: 0 10rpx;
+					font-size: 20rpx;
+				}
+			}
+		}
+		.custom-box {
+			padding: 20rpx 0 20rpx 0;
+			width: 100%;
+			.label {
+				padding: 0 0 20rpx 20rpx;
+				width: 100%;
+				font-size: 28rpx;
+			}
+			.custom-item {
+				display: flex;
+				width: 100%;
+				justify-content: space-around;
+				flex-wrap: wrap;
+				.screenTab {
+					border-radius: 20rpx;
+					margin: 10rpx 0 10rpx 0;
+					background: #eee;
+					width: calc(100% / 3 - 24rpx);
+					line-height: 60rpx;
+					text-align: center;
+				}
+				.screenTabActive {
+					border-radius: 20rpx;
+					margin: 10rpx 0 10rpx 0;
+					color: #fff;
+					background: #FFD128;
+					width: calc(100% / 3 - 20rpx);
+					line-height: 60rpx;
+					text-align: center;
+				}
+			}
+		}
+		.num-box {
+			padding: 0;
+			display: flex;
+			width: 100%;
+			align-items: center;
+			.label {
+				padding: 0 20rpx;
+				white-space: nowrap;
+				width: auto;
+				font-size: 28rpx;
+			}
+			.num-item {
+				flex: 1;
+				display: flex;
+				width: 100%;
+				align-items: center;
+				flex-wrap: wrap;
+				.num-input {
+					border: 0;
+					border-radius: 40rpx;
+					background: #eee;
+					width: 40%;
+					line-height: 60rpx;
+					text-align: center;
+					height: 60rpx;
+				}
+				.num-text {
+					padding: 0 10rpx;
+					font-size: 20rpx;
+				}
+			}
+		}
+		.input-box {
+			padding: 20rpx 0 20rpx 0;
+			display: flex;
+			width: 100%;
+			justify-content: space-around;
+			align-items: center;
+			.label {
+				padding: 0 20rpx;
+				white-space: nowrap;
+				width: auto;
+				font-size: 28rpx;
+			}
+			.input {
+				border: 0;
+				border-radius: 40rpx;
+				padding: 0 20rpx 0 20rpx;
+				background: #eee;
+				flex: 1;
+				width: 80%;
+				height: 60rpx;
+			}
+		}
+		.btn-box {
+			padding: 40rpx 0 0;
+			display: flex;
+			width: 100%;
+			justify-content: space-around;
+			align-items: center;
+			.reset {
+				color: #888;
+				background: #eee;
+				width: 30%;
+				line-height: 60rpx;
+				text-align: center;
+				height: 60rpx;
+			}
+			.confirm {
+				color: #fff;
+				background: #FFD128;
+				width: 30%;
+				line-height: 60rpx;
+				text-align: center;
+				height: 60rpx;
+			}
+		}
+	}
+	.screenBoxActive {
+		transform: translate3d(0, 0, 0);
+	}
+}
+.scrollTop {
+	border-radius: 50%;
+	box-shadow: 0 8rpx 16rpx rgba(0,0,0,.3);
+	z-index: 999;
+	bottom: 20%;
+	background: #ff000030;
+	width: 60rpx;
+	line-height: 60rpx;
+	position: fixed;
+	right: 20rpx;
+	text-align: center;
+	height: 60rpx;
+	.iconfont {
+		color: #fff;
+	}
+}

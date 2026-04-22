@@ -1,0 +1,36 @@
+<wxs src="../../utils/format.wxs" module="format" />
+<view class="forum-box">
+	<!--header end-->
+	<view class="list-search-box">
+		<view class="search-form">
+			<text class="icon iconfont icon-fangdajing07"></text>
+			<input placeholder-style="color: #000" value="{{searchForm.title}}" type="text" placeholder="标题" bindinput="searchKeyInput"></input>
+		</view>
+		<button bindtap="search" class="search-btn">搜索</button>
+	</view>
+	<button class="add-btn" bindtap="onUpdateTap">新</button>
+	<view class="forum-list">
+		<view class="forum-title">互动学习</view>
+		<view class="forum-list-item" bindtap="onDetailTap" data-id="{{item.id}}" wx:for="{{list}}" wx:key="index">
+			<view class="istop" wx:if="{{item.istop}}">
+				<span class="icon iconfont icon-jiantou24"></span>
+			</view>
+			<image wx:if="{{item.cover}}" src="{{baseurl + item.cover}}" mode="widthFix"></image>
+			<view class="info-box">
+				<view class="title">{{item.title}}</view>
+				<view class="publisher">
+					{{item.typename}}
+				</view>
+				<view class="publisher">
+					发布人：{{item.userid!=userid&&item.isanon==1?'匿名':item.username}}
+				</view>
+				<view class="time">
+					发布时间：{{item.addtime}}				</view>
+			</view>
+		</view>
+	</view>
+	<!--list end-->
+</view>
+<view class="scrollTop" wx:if="{{scrollTop>200}}" bindtap="scrollTopClick">
+	<span class="icon iconfont icon-jiantou07"></span>
+</view>

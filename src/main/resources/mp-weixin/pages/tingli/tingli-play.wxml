@@ -1,0 +1,53 @@
+<view class="tingli-play-container">
+  <view class="page-header">
+    <text class="page-title">正在播放</text>
+  </view>
+
+  <view class="audio-info">
+    <text class="audio-name">{{mingcheng}}</text>
+  </view>
+
+  <view class="audio-player">
+    <view class="player-wrapper">
+      <view class="progress-bar">
+        <slider
+          value="{{currentTime}}"
+          max="{{duration}}"
+          activeMode="forwards"
+          bindchange="onProgressChange"
+          activeColor="#fa6b04"
+          backgroundColor="#e0e0e0"
+          block-size="16"
+          block-color="#fa6b04"
+        />
+      </view>
+
+      <view class="time-display">
+        <text class="current-time">{{currentTimeText}}</text>
+        <text class="duration-time">{{durationText}}</text>
+      </view>
+
+      <view class="controls">
+        <view class="control-btn" bindtap="playOrPause">
+          <text class="control-icon">{{isPlaying ? '⏸' : '▶'}}</text>
+          <text class="control-text">{{isPlaying ? '暂停' : '播放'}}</text>
+        </view>
+
+        <view class="speed-selector">
+          <text class="speed-label">倍速：</text>
+          <picker
+            value="{{speedIndex}}"
+            range="{{speedOptions}}"
+            bindchange="onSpeedChange"
+            range-key="label"
+          >
+            <view class="speed-picker">
+              <text class="speed-value">{{speedOptions[speedIndex].label}}</text>
+              <text class="speed-arrow">▼</text>
+            </view>
+          </picker>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>

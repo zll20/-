@@ -1,0 +1,49 @@
+<wxs src="../../utils/format.wxs" module="format" />
+<view class="content">
+	<view class="detail-container">
+		<view class="detail-content">
+
+			<view class="detail-list-item">
+				<view class="label">商品id：</view>
+				<view class="text" >{{detail.refid}}</view>
+			</view>
+			<view class="detail-list-item">
+				<view class="label">表名：</view>
+				<view class="text" >{{detail.tablename}}</view>
+			</view>
+			<view class="detail-list-item">
+				<view class="label">名称：</view>
+				<view class="text" >{{detail.name}}</view>
+			</view>
+			<view class="detail-img-item">
+				<image wx:if="{{detail.picture}}" src="{{baseurl+detail.picture}}"></image>
+			</view>
+			<view class="detail-list-item">
+				<view class="label">类型：</view>
+				<view class="text" >{{detail.type}}</view>
+			</view>
+			<view class="detail-list-item">
+				<view class="label">推荐类型：</view>
+				<view class="text" >{{detail.inteltype}}</view>
+			</view>
+			<view class="detail-list-item">
+				<view class="label">备注：</view>
+				<view class="text" >{{detail.remark}}</view>
+			</view>
+
+
+
+
+
+
+
+
+			<view class="bottom-content bg-white button-box">
+
+			</view>
+		</view>
+	</view>
+	<view class="scrollTop" wx:if="{{scrollTop>200}}" bindtap="scrollTopClick">
+		<span class="icon iconfont icon-jiantou07"></span>
+	</view>
+</view>

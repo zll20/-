@@ -1,0 +1,96 @@
+// 时间切割
+var formatDate = function(dateStr,name,name2,type=1) {
+	var reg = getRegExp('-','g');
+	var reg2 = getRegExp(':','g');
+	var dateStr1,dateStr1
+	if(type==2) {
+		dateStr1 = dateStr.replace(reg, name)
+		dateStr2 = dateStr1.replace(reg2, name2)
+		return dateStr2
+	}else {
+		dateStr1 = dateStr.split(' ')[0]
+		dateStr2 = dateStr1.replace(reg, name)
+		return dateStr2
+	}
+}
+// 名称替换
+var nameChange = function(name,change) {
+	var reg = getRegExp(change,'g');
+	name2 = name.replace(reg, '')
+	return name2
+}
+// 链接地址判断
+var preHttp = function(str) {
+	return str && str.substring(0,4)=='http';
+}
+// 名称判断
+var preChapter = function(str) {
+	return str && str.substring(0,7)=='chapter';
+}
+// 查询判断
+var queryChange = function(arr, role){
+	if(!role) {
+		return false
+	}
+	for(var x = 0;x<arr.length;x++) {
+		if(arr[x] == role) {
+			return true
+		}
+	}
+	return false
+}
+
+// 后台菜单判断
+var hasBack = function(tableName) {
+	if(tableName == 'exampaper'||tableName == 'examquestion') {
+		return false
+	}
+	if(tableName.indexOf('chapter')!=-1) {
+		return false
+	}
+	return true
+}
+// 权限判断
+var authChange = function(arr,key){
+  for(var x=0;x<arr.length;x++) {
+    if(arr[x]==key) {
+      return true
+    }
+  }
+  return false
+}
+// 跨表选座
+var changeZuoweiPaixu = function(index,indexs,detail){
+	index = Number(index)
+	indexs = Number(indexs)
+	if(index==0&&indexs<detail.columns){
+		return true
+	}
+	if(index>0){
+		if(indexs<(detail.columns * (index + 1))){
+			if(indexs >= detail.columns * index){
+				return true
+			}
+		}
+	}
+	return false
+}
+var yixuanChange = function(index,yixuanzuowei) {
+	for (var x=0;x<yixuanzuowei.length;x++) {
+		if (yixuanzuowei[x] == index) {
+			return false
+		}
+	}
+	return true
+}
+module.exports = {
+	formatDate: formatDate,
+	nameChange:nameChange,
+	preHttp: preHttp,
+	preChapter: preChapter,
+	queryChange: queryChange,
+	hasBack: hasBack,
+	authChange: authChange,
+	changeZuoweiPaixu: changeZuoweiPaixu,
+	yixuanChange: yixuanChange,
+}

@@ -1,0 +1,64 @@
+<wxs src="../../utils/format.wxs" module="format" />
+<view class="content">
+	<view class="home-box">
+		<view class="menu_view">
+			<view class="menu-item" bindtap="onPageTap" data-tablename="danciku">
+				<view class="iconarr cuIcon-pic" style="background:{{menuColor[0]}}"></view>
+				<view class="text">单词库</view>
+			</view>
+			<view class="menu-item" bindtap="onPageTapCustom" data-type="tingli">
+				<view class="iconarr cuIcon-sound" style="background:{{menuColor[1]}}"></view>
+				<view class="text">听力</view>
+			</view>
+			<view class="menu-item" bindtap="onPageTapCustom" data-type="wenkan">
+				<view class="iconarr cuIcon-read" style="background:{{menuColor[2]}}"></view>
+				<view class="text">文刊</view>
+			</view>
+			<view class="menu-item" bindtap="onPageTap" data-tablename="forum">
+				<view class="iconarr cuIcon-attentionfavor" style="background:{{menuColor[3]}}"></view>
+				<view class="text">互动学习</view>
+			</view>
+			<block wx:for="{{menuList}}" wx:key="index1" wx:for-item="item" wx:for-index="index1">
+				<block wx:if="{{index1==0}}" wx:key="index" wx:for="{{item.frontMenu}}" wx:for-item="menu" wx:for-index="index">
+					<block wx:key="sort" wx:for="{{menu.child}}" wx:for-item="child" wx:for-index="sort">
+						<block wx:key="sort2" wx:for="{{child.buttons}}" wx:for-item="button" wx:for-index="sort2">
+							<view class="menu-item" wx:if="{{button=='查看' && child.tableName!='danciku' && child.tableName!='tingli' && child.tableName!='forum' && child.tableName!='yifahuodingdan' && child.tableName!='yituikuandingdan' && child.tableName!='yiquxiaodingdan' && child.tableName!='weizhifudingdan' && child.tableName!='yizhifudingdan' && child.tableName!='yiwanchengdingdan'}}" bindtap="onPageTap2" data-tablename="{{child.tableName}}">
+								<view class="iconarr {{child.appFrontIcon}}" style="background:{{menuColor[index+4]}}"></view>
+								<view class="text">{{format.nameChange(child.menu,'列表')}}</view>
+							</view>
+						</block>
+					</block>
+				</block>
+			</block>
+		</view>
+		<view class="listBox recommend recommend-box">
+			<view class="recommend-title-box">
+				<view class="recommend-title">单词库推荐</view>
+				<view class="recommend-more-box" bindtap="onPageTap" data-tablename="danciku">
+					<text class="more-text">更多</text>
+					<text class="icon iconfont icon-jinru"></text>
+				</view>
+			</view>
+			<view class="list-box style3 list3">
+				<view bindtap="onDetailTap" data-tablename="danciku" data-id="{{product.id}}" wx:for="{{dancikulist}}" wx:for-item="product" wx:for-index="index" wx:key="index" class="list-item">
+					<image class="list-item-image" mode="aspectFill" wx:if="{{format.preHttp(product.fengmiantu)}}" src="{{product.fengmiantu}}"></image>
+					<image class="list-item-image" mode="aspectFill" wx:else src="{{product.fengmiantu?baseurl+product.fengmiantu:''}}"></image>
+					<view class="list-item-body">
+						<view class="list-item-title">{{product.danci}}</view>
+						<view class="time-box">
+							<text class="icon iconfont icon-shijian21"></text>
+							<text class="text">{{format.formatDate(product.addtime,'-')}}</text>
+						</view>
+						<view class="collect-box">
+							<text class="icon iconfont icon-shoucang10"></text>
+							<text class="text">{{product.storeupnum}}</text>
+						</view>
+					</view>
+				</view>
+			</view>
+		</view>
+		<view class="scrollTop" wx:if="{{scrollTop>200}}" bindtap="scrollTopClick">
+			<span class="icon iconfont icon-jiantou07"></span>
+		</view>
+	</view>
+</view>

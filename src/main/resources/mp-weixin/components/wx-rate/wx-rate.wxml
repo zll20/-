@@ -1,0 +1,8 @@
+<!--components/wx-rate/wx-rate.wxml-->
+<view>
+  <span class="icon iconfont icon-shoucang12" bindtap="scoreChange" data-score="1" style="color: {{value>0?'#FFEA00':'#AEAEAE'}}"></span>
+  <span class="icon iconfont icon-shoucang12" bindtap="scoreChange" data-score="2" style="color: {{value>1?'#FFEA00':'#AEAEAE'}}"></span>
+  <span class="icon iconfont icon-shoucang12" bindtap="scoreChange" data-score="3" style="color: {{value>2?'#FFEA00':'#AEAEAE'}}"></span>
+  <span class="icon iconfont icon-shoucang12" bindtap="scoreChange" data-score="4" style="color: {{value>3?'#FFEA00':'#AEAEAE'}}"></span>
+  <span class="icon iconfont icon-shoucang12" bindtap="scoreChange" data-score="5" style="color: {{value>4?'#FFEA00':'#AEAEAE'}}"></span>
+</view>

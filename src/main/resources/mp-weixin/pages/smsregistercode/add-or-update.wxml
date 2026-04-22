@@ -1,0 +1,26 @@
+  
+
+<view class="content">
+	<view class="add-box" wx:if="{{showType==1}}">
+		<form class="add-form">
+			<view class="list-item">
+				<view class="label">手机</view>
+				<input class="inp" disabled="{{ro.mobile}}" value="{{ruleForm.mobile}}" placeholder="手机"  type="text" bindinput="bindKeyInput" data-name="mobile"></input>
+			</view>
+			<view class="list-item">
+				<view class="label">角色</view>
+				<input class="inp" disabled="{{ro.role}}" value="{{ruleForm.role}}" placeholder="角色"  type="text" bindinput="bindKeyInput" data-name="role"></input>
+			</view>
+			<view class="list-item">
+				<view class="label">验证码</view>
+				<input class="inp" disabled="{{ro.code}}" value="{{ruleForm.code}}" placeholder="验证码"  type="text" bindinput="bindKeyInput" data-name="code"></input>
+			</view>
+   
+			
+			<view class="btn-box" >
+				<button  bindtap="beforeSubmit" class="btn-confirm">提交</button>
+			</view>
+		</form>
+
+	</view>
+</view>

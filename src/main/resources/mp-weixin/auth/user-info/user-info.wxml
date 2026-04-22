@@ -1,0 +1,41 @@
+
+<view class="content">
+	<view class="userinfo-box">
+		<view class="userinfo-form">
+			<view class="list-item" wx:if="{{tableName=='xuesheng'}}" bindtap="uploadTap" data-mediatype="image" data-tablename="xuesheng" data-columnname="touxiang">
+				<view class="label">头像</view>
+				<image class="img-btn" wx:if="{{ruleForm.touxiang}}" src="{{baseurl+ruleForm.touxiang}}" mode=""></image>
+				<image class="img-btn" wx:else src="../../static/upload.png" mode=""></image>
+			</view>
+			<view class="list-item" wx:if="{{tableName=='xuesheng'}}">
+				<view class="label">账号</view>
+				<input class="inp-view" disabled="true" value="{{ruleForm.zhanghao}}" placeholder="账号"></input>
+			</view>
+			<view class="list-item" wx:if="{{tableName=='xuesheng'}}">
+				<view class="label">昵称</view>
+				<input class="inp-view" disabled="{{ro.nicheng}}" value="{{ruleForm.nicheng}}" placeholder="昵称" bindinput="bindKeyInput" data-name="nicheng"></input>
+			</view>
+			<view class="list-item" wx:if="{{tableName=='xuesheng'}}">
+				<view class="label">姓名</view>
+				<input class="inp-view" disabled="{{ro.xingming}}" value="{{ruleForm.xingming}}" placeholder="姓名" bindinput="bindKeyInput" data-name="xingming"></input>
+			</view>
+			<view class="list-item" wx:if="{{tableName=='xuesheng'}}">
+				<view class="label">性别</view>
+				<picker class="picker-box" disabled="{{ro.xingbie}}" bindchange="selChange" data-tablename="xuesheng" data-columnname="xingbie" value="{{xueshengxingbieIndex}}" range="{{xueshengxingbieOptions}}">
+					<view class="picker-view">{{ruleForm.xingbie?ruleForm.xingbie:"请选择性别"}}</view>
+				</picker>
+			</view>
+			<view class="list-item" wx:if="{{tableName=='xuesheng'}}">
+				<view class="label">邮箱</view>
+				<input class="inp-view" disabled="{{ro.youxiang}}" value="{{ruleForm.youxiang}}" placeholder="邮箱" bindinput="bindKeyInput" data-name="youxiang"></input>
+			</view>
+			<view class="list-item" wx:if="{{tableName=='xuesheng'}}">
+				<view class="label">手机号</view>
+				<input class="inp-view" disabled="{{ro.mobile}}" value="{{ruleForm.mobile}}" placeholder="手机号" bindinput="bindKeyInput" data-name="mobile"></input>
+			</view>
+			<view class="btn-box">
+				<button bindtap="update" class="btn-update">保存</button>
+			</view>
+		</view>
+	</view>
+</view>

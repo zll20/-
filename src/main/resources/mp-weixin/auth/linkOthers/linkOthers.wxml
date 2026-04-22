@@ -1,0 +1,2 @@
+<!--auth/linkOthers/linkOthers.wxml-->
+<web-view src="{{url}}"></web-view>

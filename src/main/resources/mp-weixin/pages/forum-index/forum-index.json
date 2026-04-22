@@ -1,0 +1,9 @@
+{
+	"navigationBarTitleText": "互动学习",
+	"navigationBarBackgroundColor": "#FFFFFF",
+	"navigationBarTextStyle": "black",
+	"onReachBottomDistance": 50,
+	"enablePullDownRefresh": true,
+	"usingComponents": {
+	}
+}

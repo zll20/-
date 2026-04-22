@@ -1,0 +1,150 @@
+.forum-list {
+	padding: 20rpx;
+	width: 100%;
+	.forum-list-item {
+		position: relative;
+		border-radius: 30rpx;
+		box-shadow: none;
+		padding: 30rpx;
+		margin: 0 0 20rpx;
+		background: #fff;
+		display: flex;
+		justify-content: space-between;
+		.istop {
+			box-shadow: none;
+			top: 0;
+			background: #fff;
+			position: absolute;
+			right: 20rpx;
+			.iconfont {
+				color: #000;
+			}
+		}
+		image {
+			border-radius: 10rpx;
+			margin: 10rpx 0 0;
+			width: 176rpx;
+			height: 176rpx;
+		}
+		.info-box {
+			width: calc(100% - 216rpx);
+			.title {
+				padding: 0 0 16rpx;
+				color: #000;
+			}
+			.center-box {
+				padding: 0 0 16rpx;
+				width: 100%;
+				.btn1 {
+					border-radius: 10rpx;
+					padding: 0 20rpx;
+					color: #fff;
+					background: #FFD128;
+					display: inline-flex;
+					font-size: 20rpx;
+					line-height: 50rpx;
+					height: 50rpx;
+				}
+				.btn2 {
+					border-radius: 10rpx;
+					padding: 0 20rpx;
+					color: #fff;
+					background: #B30000;
+					display: inline-flex;
+					font-size: 20rpx;
+					line-height: 50rpx;
+					height: 50rpx;
+				}
+			}
+			.delflag {
+				color: #f00;
+				font-weight: bold;
+				font-size: 12px;
+			}
+			.shflag {
+				color: #39b54a;
+				font-weight: bold;
+				font-size: 12px;
+			}
+			.publisher {
+				color: #bbb;
+			}
+			.time {
+				color: #bbb;
+			}
+			.bottom-box {
+				padding: 0 0 16rpx;
+				display: flex;
+				width: 100%;
+				.view-btn {
+					border-radius: 10rpx;
+					padding: 0 30rpx;
+					box-shadow: none;
+					color: #fff;
+					background: #FFD128;
+					font-size: 28rpx;
+					line-height: 50rpx;
+					height: 50rpx;
+				}
+				.edit-btn {
+					border-radius: 10rpx;
+					padding: 0 30rpx;
+					box-shadow: none;
+					margin: 0 0 0 20rpx;
+					color: #fff;
+					background: #0036FF;
+					font-size: 28rpx;
+					line-height: 50rpx;
+					height: 50rpx;
+				}
+				.del-btn {
+					border-radius: 10rpx;
+					padding: 0 30rpx;
+					box-shadow: none;
+					margin: 0 0 0 20rpx;
+					color: #fff;
+					background: #B30000;
+					font-size: 28rpx;
+					line-height: 50rpx;
+					height: 50rpx;
+				}
+			}
+		}
+	}
+}
+.add-btn {
+	border: 0;
+	z-index: 999;
+	color: #333;
+	white-space: nowrap;
+	bottom: 160rpx;
+	display: flex;
+	font-size: 28rpx;
+	line-height: 80rpx;
+	right: 20rpx;
+	border-radius: 100%;
+	box-shadow: none;
+	outline: none;
+	background: #FFD128;
+	width: 80rpx;
+	justify-content: center;
+	align-items: center;
+	position: fixed;
+	height: 80rpx;
+}
+.scrollTop {
+	border-radius: 50%;
+	box-shadow: 0 8rpx 16rpx rgba(0,0,0,.3);
+	z-index: 999;
+	bottom: 20%;
+	background: #ff000030;
+	width: 60rpx;
+	line-height: 60rpx;
+	position: fixed;
+	right: 20rpx;
+	text-align: center;
+	height: 60rpx;
+	.iconfont {
+		color: #fff;
+	}
+}

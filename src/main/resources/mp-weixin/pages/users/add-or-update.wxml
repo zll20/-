@@ -1,0 +1,33 @@
+  
+
+<view class="content">
+	<view class="add-box" wx:if="{{showType==1}}">
+		<form class="add-form">
+			<view class="list-item">
+				<view class="label">用户名</view>
+				<input class="inp" disabled="{{ro.username}}" value="{{ruleForm.username}}" placeholder="用户名"  type="text" bindinput="bindKeyInput" data-name="username"></input>
+			</view>
+			<view class="list-item">
+				<view class="label">密码</view>
+				<input class="inp" disabled="{{ro.password}}" value="{{ruleForm.password}}" placeholder="密码"  type="text" bindinput="bindKeyInput" data-name="password"></input>
+			</view>
+			<view class="list-item">
+				<view class="label">角色</view>
+				<input class="inp" disabled="{{ro.role}}" value="{{ruleForm.role}}" placeholder="角色"  type="text" bindinput="bindKeyInput" data-name="role"></input>
+			</view>
+			<view class="list-item"
+				bindtap="uploadTap" data-mediatype="image"
+				data-columnname="image">
+				<view class="label">头像</view>
+				<image class="upload-img" wx:if="{{ruleForm.image}}" src="{{baseurl+ruleForm.image}}" mode="aspectFill"></image>
+				<image class="upload-img" wx:else src="../../static/upload.png" mode="aspectFill"></image>
+			</view>
+    
+			
+			<view class="btn-box" >
+				<button  bindtap="beforeSubmit" class="btn-confirm">提交</button>
+			</view>
+		</form>
+
+	</view>
+</view>

@@ -1,0 +1,54 @@
+<wxs src="../../utils/format.wxs" module="format" />
+<view>
+	<view class="content">
+		<view class="list-box">
+			<view class="cu-bar bg-white list-search-box">
+				<view  class="search-form round">
+					<text class="icon iconfont icon-fangdajing07"></text>
+					<input placeholder-style="color: #999" value="{{searchForm.xingming}}" bindinput="searchKeyInput" data-name="xingming" type="text" placeholder="姓名" ></input>
+				</view>
+				<button bindtap="search" class="cu-btn shadow-blur round search-btn">搜索</button>
+			</view>
+			<view class="sort-box">
+				<view class="sort-time-item" bindtap="sortClick" data-name="addtime">
+					<text class="text">按日期</text>
+					<text wx:if="{{listSort!='addtime'}}" class="icon iconfont icon-shijian18"></text>
+					<text wx:elif="{{listSort=='addtime'&&listOrder=='asc'}}" class="icon iconfont icon-shijian18"></text>
+					<text wx:elif="{{listSort=='addtime'&&listOrder=='desc'}}" class="icon iconfont icon-shijian18"></text>
+				</view>
+			</view>
+			<view class="list-box1">
+				<!-- 样式2 -->
+				<view class="list2">
+					<view bindtap="onDetailTap" data-item="{{item}}" class="list-item" wx:for="{{list}}" wx:key="index">
+						<image mode="aspectFill" class="list-item-image" wx:if="{{format.preHttp(item.touxiang)}}" src="{{item.touxiang}}"></image>
+						<image mode="aspectFill" class="list-item-image" wx:else src="{{baseurl+item.touxiang}}"></image>
+
+						<view class="infoBox">
+							<view class="list-item-title">{{item.xingming}}</view>
+							<view class="time-box">
+								<text class="icon iconfont icon-shijian21"></text>
+								<text class="text">{{format.formatDate(item.addtime,'-')}}</text>
+							</view>
+						</view>
+						<view class="operate-box" >
+							<view class="edit-box" wx:if="{{format.authChange(isAuth,'修改')}}" catchtap="onUpdateTap" data-item="{{item}}">
+								<text class="cuIcon-edit"></text>
+								<text class="text">修改</text>
+							</view>
+							<view class="del-box" wx:if="{{format.authChange(isAuth,'删除')}}" catchtap="onDeleteTap" data-item="{{item}}">
+								<text class="cuIcon-delete"></text>
+								<text class="text">删除</text>
+							</view>
+						</view>
+					</view>
+				</view>
+		
+			</view>
+			<button wx:if="{{format.authChange(isAuth,'新增')}}" class="add-btn" bindtap="onAddTap">新增</button>
+		</view>
+	</view>
+	<view class="scrollTop" wx:if="{{scrollTop>200}}" bindtap="scrollTopClick">
+		<span class="icon iconfont icon-jiantou07"></span>
+	</view>
+</view>

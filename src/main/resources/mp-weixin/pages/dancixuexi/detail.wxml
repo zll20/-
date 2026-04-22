@@ -1,0 +1,42 @@
+<wxs src="../../utils/format.wxs" module="format" />
+<view class="content">
+	<view class="detail-container">
+		<view class="detail-content">
+
+			<view class="detail-list-item">
+				<view class="label">姓名：</view>
+				<view class="text" >{{detail.xingming}}</view>
+			</view>
+			<view class="detail-list-item">
+				<view class="label">学习时长：</view>
+				<view class="text" >{{detail.xuexishizhang}}</view>
+			</view>
+			<view class="detail-list-item">
+				<view class="label">单词量：</view>
+				<view class="text" >{{detail.danciliang}}</view>
+			</view>
+			<view class="detail-list-item">
+				<view class="label">是否记住：</view>
+				<view class="text" >{{detail.shifoujizhu}}</view>
+			</view>
+			<view class="detail-list-item">
+				<view class="label">日期：</view>
+				<view class="text" >{{detail.riqi}}</view>
+			</view>
+
+
+
+
+
+
+
+
+			<view class="bottom-content bg-white button-box">
+
+			</view>
+		</view>
+	</view>
+	<view class="scrollTop" wx:if="{{scrollTop>200}}" bindtap="scrollTopClick">
+		<span class="icon iconfont icon-jiantou07"></span>
+	</view>
+</view>

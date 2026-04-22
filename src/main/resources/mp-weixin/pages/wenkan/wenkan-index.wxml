@@ -1,0 +1,20 @@
+<view class="wenkan-container">
+  <view class="page-header">
+    <text class="page-title">选择级别</text>
+  </view>
+
+  <view class="level-switch">
+    <view class="level-grid">
+      <view
+        wx:for="{{levelList}}"
+        wx:key="index"
+        class="level-item {{currentLevel === item ? 'active' : ''}}"
+        bindtap="selectLevel"
+        data-level="{{item}}"
+      >
+        <text class="level-icon">📖</text>
+        <text class="level-text">{{item}}</text>
+      </view>
+    </view>
+  </view>
+</view>

@@ -1,0 +1,70 @@
+  
+<wxs src="../../utils/format.wxs" module="format" />
+<view class="content">
+	<view class="add-box" wx:if="{{showType==1}}">
+		<form class="add-form">
+			<view class="list-item">
+				<view class="label">姓名</view>
+				<input class="inp" disabled="{{ro.xingming}}" value="{{ruleForm.xingming}}" placeholder="姓名"  type="text" bindinput="bindKeyInput" data-name="xingming"></input>
+			</view>
+			<view class="list-item">
+				<view class="label">日期</view>
+				<picker class="picker-box" mode="date" value="{{ruleForm.riqi}}" bindchange="dateChange" data-columnname="riqi" disabled="{{ro.riqi}}">
+					<view class="picker-text">{{ruleForm.riqi?ruleForm.riqi:"请选择日期"}}</view>
+				</picker>
+			</view>
+			<view class="list-item">
+				<view class="label">学习时长</view>
+				<input class="inp" disabled="{{ro.xuexishizhang}}" value="{{ruleForm.xuexishizhang}}" placeholder="学习时长" type="digit" bindinput="bindKeyInput" data-name="xuexishizhang"></input>
+			</view>
+			<view class="list-item">
+				<view class="label">单词量</view>
+				<input class="inp" disabled="{{ro.danciliang}}" value="{{ruleForm.danciliang}}" placeholder="单词量" type="number" bindinput="bindKeyInput" data-name="danciliang"></input>
+			</view>
+			<view class="list-item">
+				<view class="label">是否记住</view>
+				<picker class="picker-box" disabled="{{ro.shifoujizhu}}" bindchange="selChange" data-columnname="shifoujizhu" value="{{shifoujizhuIndex}}" range="{{shifoujizhuOptions}}">
+					<view class="picker-text">{{ruleForm.shifoujizhu?ruleForm.shifoujizhu:"请选择是否记住"}}</view>
+				</picker>
+			</view>
+      
+			
+			<view class="btn-box" >
+				<button  bindtap="beforeSubmit" class="btn-confirm">提交</button>
+			</view>
+		</form>
+
+	</view>
+	<view wx:elif="{{showType==2}}">
+		<view style="width: 100%;display: flex;flex-wrap: wrap;padding: 10px;">
+			<button style="margin: 0 10px 0 0" wx:if="{{format.authChange(isAuth,'学习分析')}}" size="mini" type="primary" bindtap="chartClick1">
+				学习分析
+			</button>
+			<button style="margin: 0 10px 0 0" wx:if="{{format.authChange(isAuth,'学习时长')}}" size="mini" type="primary" bindtap="chartClick2">
+				学习时长
+			</button>
+		</view>
+		<view style="width: 100%;">
+			<view wx:if="{{chartType1}}" style="width: 100%;text-align: center;line-height: 2;font-size: 12px;color: #000">
+				学习分析
+			</view>
+			<w-cav
+				wx:if="{{chartType1}}"
+				style="width: 100%;"
+				type="pie"
+				opts="{{opts1}}"
+				chartData="{{chartData1}}">
+			</w-cav>
+			<view wx:if="{{chartType2}}" style="width: 100%;text-align: center;line-height: 2;font-size: 12px;color: #000">
+				学习时长
+			</view>
+			<w-cav
+				wx:if="{{chartType2}}"
+				style="width: 100%;"
+				type="column"
+				opts="{{opts2}}"
+				chartData="{{chartData2}}">
+			</w-cav>
+		</view>
+	</view>
+</view>

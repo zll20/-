@@ -1,0 +1,37 @@
+  
+
+<view class="content">
+	<view class="add-box" wx:if="{{showType==1}}">
+		<form class="add-form">
+			<view class="list-item">
+				<view class="label">标题</view>
+				<input class="inp" disabled="{{ro.title}}" value="{{ruleForm.title}}" placeholder="标题"  type="text" bindinput="bindKeyInput" data-name="title"></input>
+			</view>
+			<view class="list-item">
+				<view class="label">类型</view>
+				<picker class="picker-box" disabled="{{ro.type}}" bindchange="selChange" data-columnname="type" value="{{typeIndex}}" range="{{typeOptions}}">
+					<view class="picker-text">{{ruleForm.type?ruleForm.type:"请选择类型"}}</view>
+				</picker>
+			</view>
+			<view class="list-item">
+				<view class="label">提醒时间</view>
+				<input class="inp" disabled="{{ro.remindtime}}" value="{{ruleForm.remindtime}}" placeholder="提醒时间" bindtap="dateTimeShow" data-columnname="remindtime"></input>
+			</view>
+       
+			<view class="list-item">
+				<view class="label">简介</view>
+				<textarea class="textarea" value="{{ruleForm.brief}}" placeholder="简介" disabled="{{ro.brief}}" bindinput="bindKeyInput" data-name="brief"></textarea>
+			</view>
+			<view class="list-editor-item">
+				<view class="label">内容</view>
+				<w-edt class="editor-view" ref="editor" value="{{ruleForm.content}}" placeholder="内容" bind:editorChange="editorChange" data-name="content"></w-edt>
+			</view>
+			
+			<view class="btn-box" >
+				<button  bindtap="beforeSubmit" class="btn-confirm">提交</button>
+			</view>
+		</form>
+
+		<w-dpk showType="{{remindtimeShow}}" bind:dateChange="dateTimeChange" data-columnname="remindtime" bind:datePickerCancellEvent="dateTimeCancel"></w-dpk>
+	</view>
+</view>

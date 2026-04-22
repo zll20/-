@@ -1,0 +1,8 @@
+{
+	"navigationBarTitleText": "弹窗提醒",
+	"navigationBarBackgroundColor": "#FFFFFF",
+	"navigationBarTextStyle": "black",
+	"usingComponents": {
+		"w-popup": "/components/wx-popup/wx-popup"
+	}
+}

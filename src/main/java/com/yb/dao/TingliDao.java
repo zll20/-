@@ -1,0 +1,9 @@
+package com.yb.dao;
+
+import com.yb.entity.TingliEntity;
+import com.baomidou.mybatisplus.core.mapper.BaseMapper;
+import org.apache.ibatis.annotations.Mapper;
+
+@Mapper
+public interface TingliDao extends BaseMapper<TingliEntity> {
+}
