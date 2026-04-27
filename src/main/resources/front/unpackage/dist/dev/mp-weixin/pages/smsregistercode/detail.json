@@ -1,8 +1,0 @@
-{
-  "navigationBarBackgroundColor": "#FFFFFF",
-  "navigationBarTextStyle": "black",
-  "navigationBarTitleText": "短信验证码",
-  "usingComponents": {
-    "mescroll-uni": "/components/mescroll-uni/mescroll-uni"
-  }
-}

@@ -1,8 +1,0 @@
-{
-  "navigationBarBackgroundColor": "#FFFFFF",
-  "navigationBarTextStyle": "black",
-  "navigationBarTitleText": "回复评论",
-  "usingComponents": {
-    "xia-editor": "/components/xia-editor/xia-editor"
-  }
-}

@@ -1,8 +1,0 @@
-{
-  "navigationBarBackgroundColor": "#FFFFFF",
-  "navigationBarTextStyle": "black",
-  "navigationBarTitleText": "单词库评论",
-  "usingComponents": {
-    "mescroll-uni": "/components/mescroll-uni/mescroll-uni"
-  }
-}
