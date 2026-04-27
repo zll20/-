@@ -1,4 +1,4 @@
 ﻿const base = {
-    url : "http://localhost:8081/code/",
+    url : "http://192.168.147.94:8081/code/",
 }
 export default base

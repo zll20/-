@@ -29,6 +29,7 @@ import com.yb.entity.DancikuEntity;
 import com.yb.entity.view.DancikuView;
 
 import com.yb.service.DancikuService;
+import com.yb.service.WordApiService;
 import com.yb.utils.PageUtils;
 import com.yb.utils.R;
 import com.yb.utils.EncryptUtil;
@@ -54,6 +55,9 @@ public class DancikuController {
 
     @Autowired
     private StoreupService storeupService;
+
+    @Autowired
+    private WordApiService wordApiService;
 
 
 
@@ -337,6 +341,108 @@ public class DancikuController {
         }
     }
 
+
+    /**
+     * 从第三方API获取单词并保存到数据库
+     * @param jibie 级别（primary-小学, middle-初中, high-高中, cet4-四级, cet6-六级, kaoyan-考研）
+     * @param words 单词列表，多个单词用逗号分隔，例如：apple,banana,orange
+     */
+    @IgnoreAuth
+    @RequestMapping("/fetchFromApi")
+    @Transactional
+    public R fetchFromApi(@RequestParam String jibie, 
+                          @RequestParam String words) {
+        try {
+            if (StringUtils.isBlank(jibie) || StringUtils.isBlank(words)) {
+                return R.error("级别和单词列表不能为空");
+            }
+
+            int successCount = wordApiService.fetchAndSaveWords(jibie, words);
+            
+            return R.ok("成功获取并保存 " + successCount + " 个单词");
+        } catch (Exception e) {
+            e.printStackTrace();
+            return R.error("获取单词失败：" + e.getMessage());
+        }
+    }
+
+    /**
+     * 批量从API获取单词（支持传入JSON数组）
+     * @param jibie 级别
+     * @param words JSON数组格式的单词列表，例如：["apple","banana","orange"]
+     */
+    @IgnoreAuth
+    @RequestMapping("/batchFetchFromApi")
+    @Transactional
+    public R batchFetchFromApi(@RequestParam String jibie, 
+                               @RequestBody String words) {
+        try {
+            if (StringUtils.isBlank(jibie) || StringUtils.isBlank(words)) {
+                return R.error("级别和单词列表不能为空");
+            }
+
+            String wordList = words.replace("[", "")
+                                  .replace("]", "")
+                                  .replace("\"", "");
+            
+            int successCount = wordApiService.fetchAndSaveWords(jibie, wordList);
+            
+            return R.ok("成功获取并保存 " + successCount + " 个单词");
+        } catch (Exception e) {
+            e.printStackTrace();
+            return R.error("获取单词失败：" + e.getMessage());
+        }
+    }
+
+    /**
+     * 从第三方API实时获取单词列表（不保存到数据库）
+     * @param jibie 级别（primary-小学, middle-初中, high-高中, cet4-四级, cet6-六级, kaoyan-考研）
+     * @param page 页码
+     * @param limit 每页数量
+     */
+    @IgnoreAuth
+    @RequestMapping("/listFromApi")
+    public R listFromApi(@RequestParam String jibie,
+                         @RequestParam(defaultValue = "1") Integer page,
+                         @RequestParam(defaultValue = "20") Integer limit) {
+        try {
+            if (StringUtils.isBlank(jibie)) {
+                return R.error("级别不能为空");
+            }
+
+            Map<String, Object> result = wordApiService.getWordsFromApi(jibie, page, limit);
+            
+            return R.ok().put("data", result);
+        } catch (Exception e) {
+            e.printStackTrace();
+            return R.error("获取单词失败：" + e.getMessage());
+        }
+    }
+
+    /**
+     * 从第三方API实时获取单个单词详情（不保存到数据库）
+     * @param word 单词
+     */
+    @IgnoreAuth
+    @RequestMapping("/detailFromApi")
+    public R detailFromApi(@RequestParam String word) {
+        try {
+            if (StringUtils.isBlank(word)) {
+                return R.error("单词不能为空");
+            }
+
+            Map<String, Object> wordDetail = wordApiService.getWordDetailFromApi(word);
+            
+            if (wordDetail != null) {
+                return R.ok().put("data", wordDetail);
+            } else {
+                return R.error("未找到该单词");
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+            return R.error("获取单词详情失败：" + e.getMessage());
+        }
+    }
 
     // hasAlipay:否
 
