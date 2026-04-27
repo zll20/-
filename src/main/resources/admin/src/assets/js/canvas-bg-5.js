@@ -71,22 +71,20 @@ export default function canvasBg() {
         };
 
         function createDots() {
-            for (i = 0; i < dots.nb; i++) {
+            for (let i = 0; i < dots.nb; i++) {
                 dots.array.push(new Dot());
             }
         }
 
         function moveDots() {
-            for (i = 0; i < dots.nb; i++) {
+            for (let i = 0; i < dots.nb; i++) {
 
                 var dot = dots.array[i];
 
                 if (dot.y < 0 || dot.y > canvas.height) {
-                    dot.vx = dot.vx;
                     dot.vy = -dot.vy;
                 } else if (dot.x < 0 || dot.x > canvas.width) {
                     dot.vx = -dot.vx;
-                    dot.vy = dot.vy;
                 }
                 dot.x += dot.vx;
                 dot.y += dot.vy;
@@ -94,10 +92,10 @@ export default function canvasBg() {
         }
 
         function connectDots() {
-            for (i = 0; i < dots.nb; i++) {
-                for (j = 0; j < dots.nb; j++) {
-                    i_dot = dots.array[i];
-                    j_dot = dots.array[j];
+            for (let i = 0; i < dots.nb; i++) {
+                for (let j = 0; j < dots.nb; j++) {
+                    let i_dot = dots.array[i];
+                    let j_dot = dots.array[j];
 
                     if ((i_dot.x - j_dot.x) < dots.distance && (i_dot.y - j_dot.y) < dots.distance && (i_dot.x -
                             j_dot.x) > -dots.distance && (i_dot.y - j_dot.y) > -dots.distance) {
@@ -117,7 +115,7 @@ export default function canvasBg() {
         }
 
         function drawDots() {
-            for (i = 0; i < dots.nb; i++) {
+            for (let i = 0; i < dots.nb; i++) {
                 var dot = dots.array[i];
                 dot.draw();
             }
@@ -140,7 +138,7 @@ export default function canvasBg() {
         //     mousePosition.x = e.pageX;
         //     mousePosition.y = e.pageY;
         // });
-        canvas.addEventListener('mouseleave', function(e) {
+        canvas.addEventListener('mouseleave', function() {
             mousePosition.x = canvas.width / 2;
             mousePosition.y = canvas.height / 2;
         })
